@@ -138,6 +138,12 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 </Layout>
 
 <style>
+  /* ===== Main Content ===== */
+  #main-content {
+    @apply relative z-10;
+    margin-top: 105px;
+  }
+
   /* ===== Hero Section ===== */
   #hero {
     @apply pb-6 pt-8 w-full max-w-6xl;
@@ -165,11 +171,11 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     overflow: hidden; 
   }
 
-.calendar-container iframe {
-  width: 100%; 
-  height: 600px; 
-  border: none; 
-}
+  .calendar-container iframe {
+    width: 100%; 
+    height: 600px; 
+    border: none; 
+  }
 
   #events,
   #recent-posts {
