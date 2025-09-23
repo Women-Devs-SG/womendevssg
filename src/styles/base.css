@@ -41,6 +41,9 @@
   body {
     @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base selection:bg-skin-accent/70 selection:text-skin-inverted;
   }
+  div {
+    @apply bg-skin-fill;
+  }
   section,
   footer {
     @apply mx-auto max-w-3xl px-4;
