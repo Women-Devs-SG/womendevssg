@@ -1,10 +1,10 @@
 # CONTRIBUTING.md  
 
-## Welcome to Women Devs Singapore!👋
+## Welcome to Women Devs Singapore!👋  
 
 Thank you for considering contributing to our projects! Your involvement helps us create an inclusive and impactful space for developers of all levels. This guide provides a clear pathway for you to start contributing, whether you’re new to open source or an experienced contributor.  
 
-By contributing, you agree to follow our [Code of Conduct](CODE_OF_CONDUCT.md) and treat everyone with respect and kindness. If you witness or experience a violation of the Code of Conduct, please report it to womendevssg@gmail.com.
+By contributing, you agree to follow our [Code of Conduct](CODE_OF_CONDUCT.md) and treat everyone with respect and kindness. If you witness or experience a violation of the Code of Conduct, please report it to womendevssg@gmail.com.  
 
 ## Table of Contents  
 
@@ -28,15 +28,21 @@ We welcome contributions in many forms, including:
 
 Whether you're fixing a typo or tackling a major issue, all contributions are valuable!  
 
-### 💡 Tips for First-Time Contributors
+⚠️ **Disclaimer:** While we welcome contributions from everyone around the world, preference will be given to:  
+- Women developers based in Singapore  
+- Members of the **[WDS Telegram community group](https://t.me/+hh3Fts4oDG41NzQ1)**  
 
-- Look for issues labeled `good first issue` or `hacktoberfest-2025` or `no-coding-required`
-- Read this guide before submitting a PR  
-- Don’t be afraid to ask questions — [maintainers](https://github.com/orgs/Women-Devs-SG/teams/wds-maintainers) are here to help  
+This ensures our Hacktoberfest efforts stay aligned with our mission of building a strong local women-in-tech community.  
+
+### 💡 Tips for First-Time Contributors  
+
+- Look for issues labeled `good first issue`, `hacktoberfest-2025`, or `no-coding-required`.  
+- Read this guide before submitting a PR.  
+- Don’t be afraid to ask questions — [maintainers](https://github.com/orgs/Women-Devs-SG/teams/wds-maintainers) are here to help.  
 - Start small: even fixing a typo or adding a link counts!  
-- Celebrate your contributions and share your PRs with the community  
+- Celebrate your contributions and share your PRs with the community.  
 
-We’re excited to have you here and can’t wait to see your contributions and ideas!
+We’re excited to have you here and can’t wait to see your contributions and ideas!  
 
 ---
 
@@ -46,8 +52,9 @@ Before you dive in:
 
 1. **Read Our Code of Conduct:** This ensures a welcoming and collaborative space for everyone.  
 2. **Check Existing Issues:** Look for open issues in the repository to see where help is needed.  
-3. **Start Small:** We label beginner-friendly issues as `good first issue` to help you ease into the project.
-4. **Add yourself as a member:** If you are a WDS member, feel free to read how to [add your own profile](../src/content/blog/adding-yourself-as-member.md) to our website.
+3. **Start Small:** We label beginner-friendly issues as `good first issue` to help you ease into the project.  
+4. **Add yourself as a member:** If you are a WDS member, feel free to read how to [add your own profile](../src/content/blog/adding-yourself-as-member.md) to our website.  
+5. **Join our Telegram group:** To participate in Hacktoberfest activities and connect with the community, please join the **[WDS Telegram group](https://t.me/+hh3Fts4oDG41NzQ1)**.  
 
 ---
 
