@@ -54,9 +54,12 @@ breadcrumbList[0] === "tags" &&
 </nav>
 
 <style>
+  :root {
+    --breadcrumb-margin-top: 137px;
+  }
   .breadcrumb {
     @apply mx-auto mb-1 mt-8 w-full max-w-6xl px-4 sm:px-8;
-    margin-top: 137px;
+    margin-top: var(--breadcrumb-margin-top);
   }
   .breadcrumb ul li {
     @apply inline;
