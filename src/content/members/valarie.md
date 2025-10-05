@@ -1,6 +1,6 @@
 ---
 name: "Valarie"
-bio: "Just an intern trying to make a very minute contribution"
+bio: "Product management intern with a passion for building data-driven, user-centric products that blend analytical insights with creative problem-solving! Passionate in mentoring and volunteering :) "
 core: false
 socials:
   - name: "LinkedIn"
