@@ -6,5 +6,5 @@ socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/valarie-koh/"
   - name: "Github"
-    href: "github.com/valariek"
+    href: "https://github.com/valariek"
 ---
