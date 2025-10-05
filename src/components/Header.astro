@@ -153,6 +153,9 @@ const { activeNav } = Astro.props;
 </header>
 
 <style>
+  header {
+    @apply fixed top-0 left-0 right-0 z-50 bg-skin-fill;
+  }
   #skip-to-content {
     @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
   }

@@ -32,14 +32,17 @@
   #logo-img {
     content: url('/assets/logo.png');
   }
-  
+
   /* Dark theme */
   html[data-theme="dark"] #logo-img {
     content: url('/assets/logo_dark.png');
   }
-  
+
   body {
     @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base selection:bg-skin-accent/70 selection:text-skin-inverted;
+  }
+  main {
+    @apply pt-32;
   }
   section,
   footer {
