@@ -1,3 +1,4 @@
+<!-- This is a sample file to guide new members on how to add themselves to the community page. -->
 ---
 name: "Example Member"
 bio: "This is my bio."

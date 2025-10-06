@@ -15,7 +15,7 @@ import { getCollection } from "astro:content";
 const members = await getCollection("members");
 // Separate core members and regular members
 const coreMembers = members.filter(member => member.data.core).sort((a, b) => (a.data.rank ?? Infinity) - (b.data.rank ?? Infinity));
-const regularMembers = members.filter(member => !member.data.core);
+const regularMembers = members.filter(member => !member.data.core && !(member.id === 'member.md'));
 ---
 
 <Layout title={`Members | ${SITE.title}`}>
