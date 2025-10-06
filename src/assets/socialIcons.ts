@@ -211,7 +211,41 @@ const socialIcons = {
   <path d="M5.455 10.82c.935 -2.163 3.045 -3.82 5.545 -3.82c2.104 0 2.844 1.915 2 4l-2 6" />
   <path d="M6.981 7l-3.981 9.914" />
   <path d="M13 11c.937 -2.16 3.071 -3.802 5.42 -3.972c2.104 0 3.128 1.706 2.284 3.792l-2.454 6.094c-.853 1.676 .75 2.586 2.75 2.086" />
-</svg>`,
+  </svg>`,
+  Behance: `<svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5"></path>
+      <path d="M3 12l4.5 0"></path>
+      <path d="M14 13h7a3.5 3.5 0 0 0 -7 0v2a3.5 3.5 0 0 0 6.64 1"></path>
+      <path d="M16 6l3 0"></path>
+    </svg>`,
+  Figma: `<svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M15 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+    <path d="M6 3m0 3a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3z"></path>
+    <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15"></path>
+  </svg>`,
+  Website: `<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon-tabler"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  >
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+  <path d="M11 13l9 -9"></path>
+  <path d="M15 4h5v5"></path>
+  </svg>`,
 };
 
 export default socialIcons;

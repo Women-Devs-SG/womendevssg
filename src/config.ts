@@ -157,4 +157,22 @@ export const SOCIALS: SocialObjects = [
     linkTitle: `${SITE.title} on Meetup`,
     active: true,
   },
+  {
+    name: "Website",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `See my portfolio on ${SITE.title}`,
+    active: true,
+  },
+  {
+    name: "Figma",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Figma`,
+    active: false,
+  },
+  {
+    name: "Behance",
+    href: "https://github.com/satnaing/astro-paper",
+    linkTitle: `${SITE.title} on Behance`,
+    active: false,
+  }
 ];

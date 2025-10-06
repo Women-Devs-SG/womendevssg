@@ -90,6 +90,9 @@ To work on an issue:
    git checkout -b your-branch-name  
    ```  
 4. Follow the steps in the project’s README to set up your environment.  
+5. Make your changes.  
+6. Test the changes on your local environment.
+7. Run `npm run test:e2e` to run the e2e (end to end) tests (Runs by default on `http://localhost:4321`, you can change it to another port in your environment variables by duplicating `.env.example` into `.env` and changing the `PLAYWRIGHT_BASE_URL` value). 
 
 ---
 
