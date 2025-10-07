@@ -2,6 +2,7 @@
 name: "Saloni Kaur"
 bio: "Director @ Women Devs SG"
 core: true
+ally: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/saloni-kaur/"

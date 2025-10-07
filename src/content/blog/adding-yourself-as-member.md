@@ -25,6 +25,7 @@ The member profile is written in YAML format with the following properties.
 | **_core_**    | Whether you are a core member (leader) or not. False by default. | optional              |
 | **_socials_** | Array of your social media. Written in array yaml format.        | Github is required    |
 | **_badges_**  | For core members, only. Describe your role.                      | optional              |
+| **_ally_**    | Mark true if you are an ally (male supporter). Only shown for regular members. | optional |
 
 ### Sample profile
 Create a new `YOUR_NAME.md` file at `src/content/members`. Copy and paste this in and edit accordingly.
@@ -34,6 +35,7 @@ Create a new `YOUR_NAME.md` file at `src/content/members`. Copy and paste this i
 name: "Regular Member"
 bio: "This is my bio."
 core: false
+ally: true      # <- add this if you are an ally/ male member
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/victoria2666/"
