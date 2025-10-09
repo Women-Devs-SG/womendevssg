@@ -161,7 +161,7 @@ export const SOCIALS: SocialObjects = [
     name: "Website",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `See my portfolio on ${SITE.title}`,
-    active: true,
+    active: false,
   },
   {
     name: "Figma",
