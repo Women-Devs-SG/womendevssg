@@ -10,39 +10,32 @@ Women Devs SG was formerly known as WomenWhoCode Singapore. We are dedicated to 
 </div>
 
 ## Who can join?
+
 Our community is for professional women in technology careers, including software engineers, developers, UX/UI designers, data scientists and more. Current and aspiring coders are welcome. Bring your laptop and a friend!
 
 ## What to expect?
+
 Our events offer free hands on technical events, study groups, panel discussions, lightning talks, and keynotes featuring influential tech industry experts, innovators, and investors. We help you build the skills you need to raise your professional profile and achieve greater career success.
 
-## Volunteer FAQs 
+## Volunteer FAQs
 
 ### How can I volunteer with WomenDevsSG?
 
-You can volunteer by creating content for our social media, creating posters, manage our events, or just moving  etc. The possibities are endless! :)  
+ Fill out our [sign-up form](https://docs.google.com/forms/d/e/1FAIpQLSf0YtHp4Cp1vJW8MVVdbW8CIW3afi1Z-Pmghfv50-98N8F0rQ/viewform)
 
 ### What roles are available?
 
-- Tech Lead
-- Events Manager
-- Social media promoter
-- General volunteer 
+Roles differ based on the tasks our [Volunteer Bot](https://github.com/Women-Devs-SG/volunteer-telegram-bot?tab=readme-ov-file#-features) assigns to you. The volunteer bot presents for each event. Tasks can range from speaking, to facilitation, to making social media banners for pre-event or post-event marketing.
 
 ### What is the expected time commitment?
 
-While we don't have a set time commitment, we do require consitency an effort. We want to see this community grow and floursh, and your commitment will greatly help with that.   
+We expect new volunteers to complete 3 commitments within 3 months. Volunteers are automatically promoted via our volunteer bot to active status when criteria are met. Check out [our Volunteer Bot's documentation](https://github.com/Women-Devs-SG/volunteer-telegram-bot?tab=readme-ov-file#-volunteer-management) for more details.
 
 ### Do I need prior experience to help?
 
-Not necessarily. While prior experience is helpful, we want this to be an opportunity for you to grow your skills.  
-
-### How do I get started?
-
-Click on [the **Sign up as a volunteer button** in our homepage](/src/pages/index.astro), and fill out the submission form. We look forward to meeting you! 
+Not necessarily. While prior experience is helpful, we want this to be an opportunity for you to grow your skills.  We look forward to working with you!
 
 
 ## Resources
+
 Read and subscribe to our [NEWSLETTER](https://www.linkedin.com/newsletters/women-devs-sg-newsletter-7230168584365203459/) so you stay up to date with our latest events!
-
-
-
