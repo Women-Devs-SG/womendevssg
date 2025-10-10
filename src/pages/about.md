@@ -25,7 +25,9 @@ Our events offer free hands on technical events, study groups, panel discussions
 
 ### What roles are available?
 
-Roles differ based on the tasks our [Volunteer Bot](https://github.com/Women-Devs-SG/volunteer-telegram-bot?tab=readme-ov-file#-features) assigns to you. The volunteer bot presents for each event. Tasks can range from speaking, to facilitation, to making social media banners for pre-event or post-event marketing.
+
+We use a task-based system where volunteers can browse available tasks through our [Volunteer Bot](https://github.com/Women-Devs-SG/volunteer-telegram-bot) and commit to ones that interest them. Tasks range from speaking and event facilitation to creating social media content for events.
+
 
 ### What is the expected time commitment?
 
