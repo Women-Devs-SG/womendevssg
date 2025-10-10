@@ -5,7 +5,7 @@ core: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/anarane/"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/anaranetung"
 url: https://anarane.com
 ---

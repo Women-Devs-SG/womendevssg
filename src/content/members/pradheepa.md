@@ -7,7 +7,7 @@ socials:
     href: "https://www.linkedin.com/in/pradheepa/"
   - name: "Twitter"
     href: "https://twitter.com/pradheepa"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/pradheepap"
 url: https://www.pradheepa.com
 badges: 

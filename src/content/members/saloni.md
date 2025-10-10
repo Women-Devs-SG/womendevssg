@@ -7,7 +7,7 @@ socials:
     href: "https://www.linkedin.com/in/saloni-kaur/"
   - name: "Instagram"
     href: "https://www.instagram.com/this.saloni/"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/missabawse"
 
 badges: 

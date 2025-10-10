@@ -7,7 +7,7 @@ socials:
     href: "https://www.linkedin.com/in/natashaannn"
   - name: "Instagram"
     href: "https://instagram.com/natashaannn"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/natashaannn"
   - name: "TikTok"
     href: "https://www.tiktok.com/@natashaannn?lang=en:"

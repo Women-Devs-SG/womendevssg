@@ -5,6 +5,6 @@ core: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/davidxhk/"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/davidxhk"
 ---

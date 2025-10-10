@@ -5,7 +5,7 @@ core: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/sugirdha/"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/Sugirdha"
 ---
 
