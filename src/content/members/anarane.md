@@ -1,6 +1,6 @@
 ---
 name: "Anarane Tung"
-bio: "Software Engineer and Tech Enthusiast"
+bio: "Software Engineer with backend and full-stack experience. I’m passionate about supporting Women in Tech and fostering Diversity and Inclusion. <3"
 core: false
 socials:
   - name: "LinkedIn"
