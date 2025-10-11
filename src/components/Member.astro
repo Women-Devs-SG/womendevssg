@@ -16,7 +16,7 @@ export interface Props {
 const { name, bio, url, socials, badges = [], core = false } = Astro.props;
 
 // Define GitHub profile picture URL
-const githubUrl = socials.find(s => s.name === 'Github')?.href;
+const githubUrl = socials.find(s => s.name === 'GitHub')?.href;
 const profilePicture = `${githubUrl}.png?size=200`;
 ---
 
@@ -40,7 +40,7 @@ const profilePicture = `${githubUrl}.png?size=200`;
           className="link-button"
           title={`${social.name}`}
         >
-          <Fragment set:html={socialIcons[social.name]} />
+          <Fragment set:html={socialIcons[social.name as keyof typeof socialIcons]} />
         </LinkButton>
       ))}
     </div>

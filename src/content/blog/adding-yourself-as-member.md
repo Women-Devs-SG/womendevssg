@@ -23,7 +23,7 @@ The member profile is written in YAML format with the following properties.
 | **_name_**    | Your name                                                        | required<sup>\*</sup> |
 | **_bio_**     | Anything that describes you. Keep it short.                      | optional              |
 | **_core_**    | Whether you are a core member (leader) or not. False by default. | optional              |
-| **_socials_** | Array of your social media. Written in array yaml format.        | Github is required    |
+| **_socials_** | Array of your social media. Written in array yaml format.        | GitHub is required    |
 | **_badges_**  | For core members, only. Describe your role.                      | optional              |
 
 ### Sample profile
@@ -39,7 +39,7 @@ socials:
     href: "https://www.linkedin.com/in/victoria2666/"
   - name: "Twitter"
     href: "https://twitter.com/lo_victoria2666"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/victoria-lo"
 ---
 ```
@@ -51,7 +51,7 @@ We have more possible social media values you can add in your profile. Remember 
 > Very important! `name` is case sensitive so be sure to write exactly as the list below.
 
 List of possible `name` values:
-- Github
+- GitHub
 - Facebook
 - Instagram
 - LinkedIn

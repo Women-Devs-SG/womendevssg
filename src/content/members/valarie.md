@@ -5,6 +5,6 @@ core: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/valarie-koh/"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/valariek"
 ---

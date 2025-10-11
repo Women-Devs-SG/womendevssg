@@ -5,7 +5,7 @@ core: false
 socials:
   - name: "Website"
     href: "https://zxsoh94.wixstudio.io/portfolio"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/zxsoh94"
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/soh-zhi-xuan/"
