@@ -3,6 +3,7 @@
 name: "Example Member"
 bio: "This is my bio."
 core: false
+ally: false          # Set to true ONLY if you are an ally (male member)
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/victoria2666/"
