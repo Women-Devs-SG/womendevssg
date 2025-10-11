@@ -14,6 +14,20 @@ const {
   title,
   disabled = false,
 } = Astro.props;
+
+//external url function checker
+const isExternalLink = (url: string): boolean => {
+  try {
+    const urlObj = new URL(url);
+    const currentDomain = new URL(Astro.url.origin).hostname;
+    return urlObj.hostname !== currentDomain && urlObj.protocol !== 'mailto:';
+  } catch {
+    return false;
+  }
+};
+
+
+const isExternal = isExternalLink(href);
 ---
 
 {
@@ -31,6 +45,8 @@ const {
       class:list={["group inline-block hover:text-skin-accent", className]}
       aria-label={ariaLabel}
       title={title}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
     >
       <slot />
     </a>
