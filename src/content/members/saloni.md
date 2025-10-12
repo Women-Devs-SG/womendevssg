@@ -8,7 +8,7 @@ socials:
   - name: "Instagram"
     href: "https://www.instagram.com/this.saloni/"
   - name: "Github"
-    href: "https://github.com/missa4892"
+    href: "https://github.com/missabawse"
 
 badges: 
   - director

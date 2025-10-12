@@ -3,6 +3,8 @@ name: "Natasha Ann"
 bio: "Partnerships Lead @ Women Devs SG"
 core: true
 socials:
+  - name: "Website"
+    href: "https://natashaannn.com/"
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/natashaannn"
   - name: "Instagram"
@@ -11,7 +13,6 @@ socials:
     href: "https://github.com/natashaannn"
   - name: "TikTok"
     href: "https://www.tiktok.com/@natashaannn?lang=en:"
-url: https://natashaannn.com/
 badges:
  - leader
 rank: 4
