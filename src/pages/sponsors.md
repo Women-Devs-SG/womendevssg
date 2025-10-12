@@ -4,7 +4,6 @@ title: "Sponsors"
 description: "Partner with Women Devs SG to empower women in tech and build a more inclusive tech community in Singapore."
 ---
 
-# Our Sponsors
 Women Devs SG thrives through the generous support of our sponsors and partners. Together, we're building a more inclusive and diverse tech ecosystem in Singapore.
 
 ## Why Partner with Women Devs SG
@@ -51,10 +50,33 @@ Early access to talent for recruitment opportunities
 ## Our Impact
 
 <!-- Add carousel/image gallery component here -->
+<!-- Example implementation: -->
+<!-- 
+<div class="sponsors-carousel">
+  <img src="/assets/social-mockup-1.jpg" alt="Women Devs SG event highlight" />
+  <img src="/assets/social-mockup-2.jpg" alt="Community networking session" />
+  <img src="/assets/social-mockup-3.jpg" alt="Workshop in action" />
+</div>
+-->
 
 ## Current Sponsors
 
+We're proud to partner with organizations that share our commitment to diversity and inclusion in tech:
 <!-- Add sponsor logos in a grid layout -->
+<!-- Example implementation: -->
+<!--
+<div class="sponsor-grid">
+  <div class="sponsor-logo">
+    <img src="/assets/sponsors/sponsor-1.png" alt="Sponsor Name" />
+  </div>
+  <div class="sponsor-logo">
+    <img src="/assets/sponsors/sponsor-2.png" alt="Sponsor Name" />
+  </div>
+  <div class="sponsor-logo">
+    <img src="/assets/sponsors/sponsor-3.png" alt="Sponsor Name" />
+  </div>
+</div>
+-->
 
 ## Partner With Us
 
