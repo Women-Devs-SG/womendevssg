@@ -21,7 +21,7 @@ const githubUrl = socials.find(s => s.name === 'Github')?.href;
 const profilePicture = `${githubUrl}.png?size=200`;
 
 const currDomain = new URL(Astro.url.origin).hostname;
-const isExternal = isExternalLink(href, currDomain);
+const isExternal = url ? isExternalLink(url, currDomain) : false;
 ---
 
 <div class="member-profile">

@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 
 const currDomain = new URL(Astro.url.origin).hostname;
-const isExternal = isExternalLink(href, currDomain);
+const isExternal = href? isExternalLink(href, currDomain) : false;
 ---
 
 {
