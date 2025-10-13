@@ -3,6 +3,7 @@
 
 import LinkButton from "./LinkButton.astro";
 import socialIcons from "@assets/socialIcons";
+import { isExternalLink } from "../utils/openExternalLinks";
 
 export interface Props {
   name: string;
@@ -19,16 +20,8 @@ const { name, bio, url, socials, badges = [], core = false } = Astro.props;
 const githubUrl = socials.find(s => s.name === 'Github')?.href;
 const profilePicture = `${githubUrl}.png?size=200`;
 
-//external url function checker
-const isExternalLink = (url: string): boolean => {
-  try {
-    const urlObj = new URL(url);
-    const currentDomain = new URL(Astro.url.origin).hostname;
-    return urlObj.hostname !== currentDomain && urlObj.protocol !== 'mailto:';
-  } catch {
-    return false;
-  }
-};
+const currDomain = new URL(Astro.url.origin).hostname;
+const isExternal = isExternalLink(href, currDomain);
 ---
 
 <div class="member-profile">
@@ -47,8 +40,8 @@ const isExternalLink = (url: string): boolean => {
       <a 
         class="website" 
         href={url}
-        target={isExternalLink(url) ? "_blank" : undefined}
-        rel={isExternalLink(url) ? "noopener noreferrer" : undefined}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
       >
         {url}
       </a>

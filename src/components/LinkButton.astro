@@ -1,4 +1,6 @@
 ---
+import { isExternalLink } from "../utils/openExternalLinks";
+
 export interface Props {
   href: string;
   className?: string;
@@ -15,19 +17,8 @@ const {
   disabled = false,
 } = Astro.props;
 
-//external url function checker
-const isExternalLink = (url: string): boolean => {
-  try {
-    const urlObj = new URL(url);
-    const currentDomain = new URL(Astro.url.origin).hostname;
-    return urlObj.hostname !== currentDomain && urlObj.protocol !== 'mailto:';
-  } catch {
-    return false;
-  }
-};
-
-
-const isExternal = isExternalLink(href);
+const currDomain = new URL(Astro.url.origin).hostname;
+const isExternal = isExternalLink(href, currDomain);
 ---
 
 {
