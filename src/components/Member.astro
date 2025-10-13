@@ -40,6 +40,7 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
       <a 
         class="website" 
         href={url}
+        aria-label={isExternal ? `${url} (opens in new tab)` : url}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}
       >

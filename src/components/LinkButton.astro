@@ -34,7 +34,7 @@ const isExternal = href? isExternalLink(href, currDomain) : false;
     <a
       {href}
       class:list={["group inline-block hover:text-skin-accent", className]}
-      aria-label={ariaLabel}
+      aria-label={isExternal ? `${ariaLabel || 'Link'} (opens in new tab)` : ariaLabel}
       title={title}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
