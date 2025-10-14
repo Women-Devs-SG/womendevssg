@@ -50,17 +50,17 @@ Early access to talent for recruitment opportunities
 ## Our Impact
 
 See the difference we're making together in the tech community
-<article class="impact-gallery">
-  <img src="/assets/community-numbers.png" alt="Our Community in Numbers: 500+ event attendees, 1000+ new members across social platforms, 1000+ members on Meetup" />
-  <img src="/assets/partner-benefits.png" alt="What we are looking for and what our partners get from sponsoring Women Devs SG" />
+<div class="impact-gallery">
+  <img src="src/assets/images/community-numbers.png" alt="Our Community in Numbers: 500+ event attendees, 1000+ new members across social platforms, 1000+ members on Meetup" />
+  <img src="src/assets/images/partner-benefits.png" alt="What we are looking for and what our partners get from sponsoring Women Devs SG" />
 </div>
 
 ## Current Sponsors
 
 We're proud to partner with organizations that share our commitment to diversity and inclusion in tech:
-<article class="sponsor-gallery">
-  <img src="/assets/partners.png" alt="Our Partners: Thoughtworks, Civitern of Filament Products, General Assembly, AWS, ahrefs, Meta, DKATALIS, SCAPE, and zühlke" />
-</article>
+<div class="sponsor-gallery">
+  <img src="src/assets/images/partners-benefits.png" alt="Our Partners: Thoughtworks, Civitern of Filament Products, General Assembly, AWS, ahrefs, Meta, DKATALIS, SCAPE, and zühlke" />
+</div>
 
 ## Partner With Us
 
