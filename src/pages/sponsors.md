@@ -49,34 +49,18 @@ Early access to talent for recruitment opportunities
 
 ## Our Impact
 
-<!-- Add carousel/image gallery component here -->
-<!-- Example implementation: -->
-<!-- 
-<div class="sponsors-carousel">
-  <img src="/assets/social-mockup-1.jpg" alt="Women Devs SG event highlight" />
-  <img src="/assets/social-mockup-2.jpg" alt="Community networking session" />
-  <img src="/assets/social-mockup-3.jpg" alt="Workshop in action" />
+See the difference we're making together in the tech community
+<article class="impact-gallery">
+  <img src="/assets/community-numbers.png" alt="Our Community in Numbers: 500+ event attendees, 1000+ new members across social platforms, 1000+ members on Meetup" />
+  <img src="/assets/partner-benefits.png" alt="What we are looking for and what our partners get from sponsoring Women Devs SG" />
 </div>
--->
 
 ## Current Sponsors
 
 We're proud to partner with organizations that share our commitment to diversity and inclusion in tech:
-<!-- Add sponsor logos in a grid layout -->
-<!-- Example implementation: -->
-<!--
-<div class="sponsor-grid">
-  <div class="sponsor-logo">
-    <img src="/assets/sponsors/sponsor-1.png" alt="Sponsor Name" />
-  </div>
-  <div class="sponsor-logo">
-    <img src="/assets/sponsors/sponsor-2.png" alt="Sponsor Name" />
-  </div>
-  <div class="sponsor-logo">
-    <img src="/assets/sponsors/sponsor-3.png" alt="Sponsor Name" />
-  </div>
-</div>
--->
+<article class="sponsor-gallery">
+  <img src="/assets/partners.png" alt="Our Partners: Thoughtworks, Civitern of Filament Products, General Assembly, AWS, ahrefs, Meta, DKATALIS, SCAPE, and zühlke" />
+</article>
 
 ## Partner With Us
 
