@@ -5,6 +5,6 @@ core: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/durga-r-manaswini-talagadadivi/"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/manaswini05"
 ---
