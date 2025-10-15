@@ -1,6 +1,6 @@
 ---
 name: "Charmine Tan"
-bio: "Hi all! I am a current freshmen at Nanyang Technological University, enrolled in the Bachelor of Applied Computing in Finance. I hope to grow alongside a supportive community like Women Devs SG during my undergraduate years and beyond."
+bio: "Hi all! I am a current freshmen at Nanyang Technological University, enrolled in the Bachelor of Applied Computing in Finance."
 core: false
 socials:
   - name: "LinkedIn"
