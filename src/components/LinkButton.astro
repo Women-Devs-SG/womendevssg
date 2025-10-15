@@ -1,4 +1,6 @@
 ---
+import { isExternalLink } from "../utils/openExternalLinks";
+
 export interface Props {
   href: string;
   className?: string;
@@ -14,6 +16,9 @@ const {
   title,
   disabled = false,
 } = Astro.props;
+
+const currDomain = new URL(Astro.url.origin).hostname;
+const isExternal = href? isExternalLink(href, currDomain) : false;
 ---
 
 {
@@ -29,8 +34,10 @@ const {
     <a
       {href}
       class:list={["group inline-block hover:text-skin-accent", className]}
-      aria-label={ariaLabel}
+      aria-label={isExternal ? `${ariaLabel || 'Link'} (opens in new tab)` : ariaLabel}
       title={title}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
     >
       <slot />
     </a>

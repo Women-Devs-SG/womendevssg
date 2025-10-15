@@ -6,7 +6,7 @@ ally: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/toshalpatel/"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/toshalpatel"
 
 badges: 

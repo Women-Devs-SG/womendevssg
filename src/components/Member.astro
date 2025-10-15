@@ -3,6 +3,7 @@
 
 import LinkButton from "./LinkButton.astro";
 import socialIcons from "@assets/socialIcons";
+import { isExternalLink } from "../utils/openExternalLinks";
 
 export interface Props {
   name: string;
@@ -17,8 +18,11 @@ export interface Props {
 const { name, bio, url, socials, badges = [], core = false, ally = false } = Astro.props;
 
 // Define GitHub profile picture URL
-const githubUrl = socials.find(s => s.name === 'Github')?.href;
+const githubUrl = socials.find(s => s.name === 'GitHub')?.href;
 const profilePicture = `${githubUrl}.png?size=200`;
+
+const currDomain = new URL(Astro.url.origin).hostname;
+const isExternal = url ? isExternalLink(url, currDomain) : false;
 ---
 
 <div class="member-profile">
@@ -46,7 +50,17 @@ const profilePicture = `${githubUrl}.png?size=200`;
       </div>
     )}
     {bio && <p class="bio">{bio}</p>}
-    {url && <a class="website" href={url}>{url}</a>}
+    {url && (
+      <a 
+        class="website" 
+        href={url}
+        aria-label={isExternal ? `${url} (opens in new tab)` : url}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+      >
+        {url}
+      </a>
+    )}
     <div class="social-icons">
       {socials.map(social => (
         <LinkButton

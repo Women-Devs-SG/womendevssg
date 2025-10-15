@@ -1,5 +1,5 @@
 const socialIcons = {
-  Github: `<svg
+  GitHub: `<svg
     xmlns="http://www.w3.org/2000/svg"
     class="icon-tabler"
     stroke-linecap="round"

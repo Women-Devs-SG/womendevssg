@@ -4,9 +4,10 @@ bio: "Software Engineer with backend and full-stack experience. I’m passionate
 core: false
 ally: false
 socials:
+  - name: "Website"
+    href: "https://anarane.com"
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/anarane/"
-  - name: "Github"
+  - name: "GitHub"
     href: "https://github.com/anaranetung"
-url: https://anarane.com
 ---
