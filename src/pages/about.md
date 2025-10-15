@@ -1,6 +1,7 @@
 ---
-layout: ../layouts/AboutLayout.astro
+layout: ../layouts/PageLayout.astro
 title: "About"
+activeNav: "about"
 ---
 
 Women Devs SG was formerly known as WomenWhoCode Singapore. We are dedicated to inspiring women to excel in technology careers. We envision a world where women are representative as technical executives, founders, VCs, board members, and software engineers. Our programs are designed to get you there.

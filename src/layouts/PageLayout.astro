@@ -12,6 +12,7 @@ export interface Props {
   frontmatter: {
     title: string;
     description?: string;
+    activeNav?: "search" | "blog" | "archives" | "members" | "about";
   };
 }
 
@@ -23,12 +24,15 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured); //resourc
 ---
 
 <Layout title={`${frontmatter.title} | ${SITE.title}`}>
-  <Header activeNav="about" />
+  <Header activeNav={frontmatter.activeNav || "about"} />
   <Breadcrumbs />
   <main id="main-content">
     <section id="about" class="prose max-w-3xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
       <slot />
+    </section>
+    <section class="prose max-w-3xl prose-img:border-0 mt-5">
+      <h2 class="text-xl tracking-wider sm:text-2xl">Featured Posts</h2>
     </section>
     {
       featuredPosts.length > 0 && (
