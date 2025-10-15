@@ -1,6 +1,6 @@
 ---
 name: "Lan"
-bio: "TI'm new to tech!"
+bio: "I'm new to tech!"
 core: false
 socials:
   - name: "LinkedIn"
