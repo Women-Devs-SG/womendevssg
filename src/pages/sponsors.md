@@ -20,7 +20,11 @@ Our community includes seasoned professionals, career-switchers, students, and a
 
 ## How you can sponsor Women Devs SG
 
+You can sponsor Women Devs SG in a few ways:
 
+- **Event Funding:** Support our networking sessions, workshops, and meetups by provding financial support to help us pay for essentials such as refreshments, and venue space
+- **Tech & Recording Support:** Fund software, cloud credits, and production gear for workshops, hackathons, and event recordings
+- **Conferences, Booths & Ops Support:** Fund conference booths, materials, and logistics, and contribute to tools like Meetup Pro, design suites, and communication platforms
 
 ## Benefits of Sponsorship
 
