@@ -53,14 +53,14 @@ When you partner with Women Devs SG, you not only gain access to a engaged commu
 
 
 <div class="impact-gallery">
-  <img src="public/assets/images/community-numbers.png" alt="Our Community in Numbers: 500+ event attendees, 1000+ new members across social platforms, 1000+ members on Meetup" /> 
+  <img src="/assets/community-numbers.png" alt="Our Community in Numbers: 500+ event attendees, 1000+ new members across social platforms, 1000+ members on Meetup"/> 
 </div>
 
 ## Our Sponsors
 
 We're proud to partner with organizations that share our commitment to diversity and inclusion in tech:
 <div class="sponsor-gallery">
-  <img src="public/assets/images/sponsors.png" alt="Our Partners: Thoughtworks, Civitern of Filament Products, General Assembly, AWS, ahrefs, Meta, DKATALIS, SCAPE, and zühlke" />
+  <img src="/assets/sponsors.png" alt="Our Partners: Thoughtworks, Civitern of Filament Products, General Assembly, AWS, ahrefs, Meta, DKATALIS, SCAPE, and zühlke"/>
 </div>
 
 ## Partner With Us
