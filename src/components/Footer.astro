@@ -11,35 +11,84 @@ export interface Props {
 const { noMarginTop = false } = Astro.props;
 ---
 
-<footer class={`${noMarginTop ? "" : "mt-auto"}`}>
+<footer class={`${noMarginTop ? "" : "mt-auto"} mx-auto max-w-full`}>
+  <!-- Top divider -->
   <Hr noPadding />
-  <div class="footer-wrapper">
-    <Socials centered />
-    <div class="copyright-wrapper">
-      <span>Copyright &#169; {currentYear}</span>
-      <span class="separator">&nbsp;|&nbsp;</span>
-      <span>All rights reserved.</span>
+  <!-- Main footer content -->
+  <div class="w-full px-6 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 sm:gap-8">
+      <!-- Site Map -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Site Map</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="footer-link text-skin-base hover:text-skin-accent">Home</a></li>
+          <li><a href="/about" class="footer-link text-skin-base hover:text-skin-accent">About</a></li>
+          <li><a href="/blog" class="footer-link text-skin-base hover:text-skin-accent">Blog</a></li>
+          <li><a href="/members" class="footer-link text-skin-base hover:text-skin-accent">Members</a></li>
+        </ul>
+      </div>
+
+      <!-- Getting Started -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Get Started</h3>
+        <ul class="space-y-2">
+          <li><a href="https://t.me/+hh3Fts4oDG41NzQ1" target="_blank" rel="noopener noreferrer" class="footer-link text-skin-base hover:text-skin-accent">Join our Community</a></li>
+          <li><a href="https://forms.gle/qbDF2ZRgV1B9ikoq9" target="_blank" rel="noopener noreferrer" class="footer-link text-skin-base hover:text-skin-accent">Apply to be a Speaker</a></li>
+          <li><a href="https://forms.gle/9Lg9Dx8ETdZRvqjx8" target="_blank" rel="noopener noreferrer" class="footer-link text-skin-base hover:text-skin-accent">Sign up as a Volunteer</a></li>
+          <li><a href="https://www.linkedin.com/newsletters/women-devs-sg-newsletter-7230168584365203459/" target="_blank" rel="noopener noreferrer" class="footer-link text-skin-base hover:text-skin-accent">Subscribe to our Newsletter</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="/blog/adding-yourself-as-member" class="footer-link text-skin-base hover:text-skin-accent">Add yourself as a new member</a></li>
+          <li><a href="/blog/adding-new-blog-posts" class="footer-link text-skin-base hover:text-skin-accent">Add new blogs on website</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact + Socials -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Contact</h3>
+        <div class="flex flex-wrap space-x-4 space-y-2">
+          <Socials centered />
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="w-full py-4 text-sm flex flex-col sm:flex-row items-center justify-center">
+    <span>Copyright &#169; {currentYear}</span>
+    <span class="hidden sm:inline mx-2">|</span>
+    <span>All rights reserved.</span>
   </div>
 </footer>
 
 <style>
-  footer {
-    @apply w-full;
+  a {
+    @apply transition-colors duration-200;
   }
-  .footer-wrapper {
-    @apply flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4;
+  .footer-link {
+    position: relative;
+    text-decoration: none;
+    /* Retain text-skin-base and hover:text-skin-accent from classes */
   }
-  .link-button {
-    @apply my-1 p-2 hover:rotate-6;
+  .footer-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 0.2s, transform 0.2s;
   }
-  .link-button svg {
-    @apply scale-125;
-  }
-  .copyright-wrapper {
-    @apply my-2 flex flex-col items-center whitespace-nowrap sm:flex-row;
-  }
-  .separator {
-    @apply hidden sm:inline;
+  .footer-link:hover::after,
+  .footer-link:focus-visible::after {
+    opacity: 1;
+    transform: scaleX(1);
   }
 </style>

@@ -51,6 +51,7 @@ const regularMembers = members.filter(member => !member.data.core && !(member.id
             socials={member.data.socials}
             badges={member.data.badges || []}
             core={member.data.core || false}
+            ally={member.data.ally || false}  
           />
         </li>
       ))}

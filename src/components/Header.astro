@@ -228,6 +228,13 @@ const { activeNav } = Astro.props;
   .menu-icon.is-active .close {
     @apply opacity-100;
   }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(var(--color-fill), 0.95);
+    backdrop-filter: blur(10px);
+  }
 </style>
 
 <script>
