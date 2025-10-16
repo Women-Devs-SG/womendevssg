@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/AboutLayout.astro
+layout: ../layouts/PageLayout.astro
 title: "Sponsors"
 description: "Partner with Women Devs SG to empower women in tech and build a more inclusive tech community in Singapore."
 ---
@@ -18,6 +18,10 @@ By partnering with us, you're not only supporting our organization, you're also 
 
 Our community includes seasoned professionals, career-switchers, students, and aspiring technologists who are passionate about growing their skills and contributing to the tech industry.
 
+## How you can sponsor Women Devs SG
+
+
+
 ## Benefits of Sponsorship
 
 When you partner with Women Devs SG, you not only gain access to a engaged community of talented women in tech, you also get the following:
@@ -30,10 +34,10 @@ When you partner with Women Devs SG, you not only gain access to a engaged commu
 
 ### Community Engagement
 
-Speaking opportunities at our meetups and workshops
-Host events at your venue to showcase your workspace and culture
-Direct interaction with community members through networking sessions
-Early access to talent for recruitment opportunities
+- Speaking opportunities at our meetups and workshops
+- Host events at your venue to showcase your workspace and culture
+- Direct interaction with community members through networking sessions
+- Early access to talent for recruitment opportunities
 
 ### Thought Leadership
 
@@ -47,19 +51,16 @@ Early access to talent for recruitment opportunities
 - Participation in career fairs and networking events
 - Job posting opportunities in our community channels
 
-## Our Impact
 
-See the difference we're making together in the tech community
 <div class="impact-gallery">
-  <img src="src/assets/images/community-numbers.png" alt="Our Community in Numbers: 500+ event attendees, 1000+ new members across social platforms, 1000+ members on Meetup" />
-  <img src="src/assets/images/partner-benefits.png" alt="What we are looking for and what our partners get from sponsoring Women Devs SG" />
+  <img src="public/assets/images/community-numbers.png" alt="Our Community in Numbers: 500+ event attendees, 1000+ new members across social platforms, 1000+ members on Meetup" /> 
 </div>
 
-## Current Sponsors
+## Our Sponsors
 
 We're proud to partner with organizations that share our commitment to diversity and inclusion in tech:
 <div class="sponsor-gallery">
-  <img src="src/assets/images/partners-benefits.png" alt="Our Partners: Thoughtworks, Civitern of Filament Products, General Assembly, AWS, ahrefs, Meta, DKATALIS, SCAPE, and zühlke" />
+  <img src="public/assets/images/sponsors.png" alt="Our Partners: Thoughtworks, Civitern of Filament Products, General Assembly, AWS, ahrefs, Meta, DKATALIS, SCAPE, and zühlke" />
 </div>
 
 ## Partner With Us
