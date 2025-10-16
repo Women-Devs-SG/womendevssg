@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: "Sponsors"
-description: "Partner with Women Devs SG to empower women in tech and build a more inclusive tech community in Singapore."
+activeNav: "sponsors"
 ---
 
 Women Devs SG thrives through the generous support of our sponsors and partners. Together, we're building a more inclusive and diverse tech ecosystem in Singapore.
