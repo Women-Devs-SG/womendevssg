@@ -1,4 +1,3 @@
-<!-- This is a sample file to guide new members on how to add themselves to the community page. -->
 ---
 name: "Joy Li"
 bio: "Digital Creator & Tech enthusiast"
