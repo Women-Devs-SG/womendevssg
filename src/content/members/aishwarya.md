@@ -2,6 +2,7 @@
 name: "Aishwarya Elango"
 bio: "Developer Relations Manager @ Women Devs SG"
 core: true
+ally: false
 socials:
   - name: "Website"
     href: "https://aishbuild273.hashnode.dev/"

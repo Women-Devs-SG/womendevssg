@@ -2,6 +2,7 @@
 name: "Lan"
 bio: "I'm new to tech!"
 core: false
+ally: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/llan/"

@@ -2,6 +2,7 @@
 name: "Amelyn"
 bio: "UX Designer"
 core: false
+ally: false
 socials:
   - name: "Website"
     href: "https://zxsoh94.wixstudio.io/portfolio"

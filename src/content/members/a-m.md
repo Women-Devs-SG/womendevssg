@@ -2,6 +2,7 @@
 name: "Ann-Marie Ng"
 bio: "Project Manager | Passionate About Open Source"
 core: false
+ally: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/ann-marie-ng-7bb167117/"
