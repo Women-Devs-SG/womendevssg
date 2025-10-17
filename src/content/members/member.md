@@ -1,5 +1,5 @@
-<!-- This is a sample file to guide new members on how to add themselves to the community page. -->
-<!-- Please DELETE these comments (text within the <> brackets) in the first TWO lines before you commit your changes. -->
+<!-- This is a sample file to guide new members on how to add themselves to the community page.-->
+<!--Please DELETE these comments (text within the <> brackets) in the first TWO lines before you commit your changes. -->
 
 ---
 name: "Example Member"
