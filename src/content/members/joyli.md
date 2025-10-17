@@ -3,7 +3,7 @@
 name: "Joy Li"
 bio: "Digital Creator & Tech enthusiast"
 core: false
-ally: false          # Set to true ONLY if you are an ally (non-woman member)
+ally: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/joylijy/"
