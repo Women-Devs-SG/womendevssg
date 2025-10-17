@@ -4,7 +4,7 @@
 
 ## Types of changes
 
-<!-- What types of changes does your code introduce to AstroPaper? Put an `x` in the boxes that apply -->
+<!-- What types of changes does your code introduce to Women Dev SG's website? Put an `x` in the boxes that apply -->
 
 - [ ] Bug Fix (non-breaking change which fixes an issue)
 - [ ] New Feature (non-breaking change which adds functionality)
