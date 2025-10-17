@@ -55,6 +55,7 @@ When you partner with Women Devs SG, you not only gain access to a engaged commu
 - Participation in career fairs and networking events
 - Job posting opportunities in our community channels
 
+### Our Community in Numbers
 
 <div class="impact-gallery">
   <img src="/assets/community-numbers.png" alt="Our Community in Numbers: 500+ event attendees, 1000+ new members across social platforms, 1000+ members on Meetup"/> 
