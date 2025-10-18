@@ -39,14 +39,14 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         <div class="text-center sm:px-4">
           <h2 class="text-3xl font-bold">Help Us Grow Women Devs SG</h2>
           <p class="mt-2 text-sm opacity-90">Partner with us to build a more inclusive tech community in Singapore.</p>
-          <LinkButton
+          <a
             href="mailto:womendevssg@gmail.com?subject=Sponsorship%20Inquiry"
-            ariaLabel="Sponsor Women Devs SG"
+            class="cta-btn mt-4 inline-block px-6 py-2 text-white font-semibold rounded hover:text-white focus:text-white active:text-white transition-colors"
+            aria-label="Sponsor Women Devs SG"
             title="Sponsor Women Devs SG"
-            className="cta-btn mt-4 inline-block px-6 py-2 text-white font-semibold rounded hover:text-white focus:text-white active:text-white"
           >
             Sponsor Women Devs SG
-          </LinkButton>
+          </a>
           <p class="mt-3 text-sm opacity-90"><a class="underline hover:text-skin-accent" href="/sponsors/">Learn more about how to become a sponsor here</a></p>
         </div>
       </div>
@@ -208,12 +208,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     background-color: rgb(16, 155, 255);
   } 
 
-  html[data-theme="light"] #sponsor-cta a.cta-btn {
-    background-color: rgb(5,53,209);
-  }
-
-  html[data-theme="dark"] #sponsor-cta a.cta-btn {
-    background-color: rgb(16, 155, 255);
+  #sponsor-cta a.cta-btn {
+    background-color: rgb(var(--color-accent));
   }
 
   html[data-theme="dark"] #community-img {
