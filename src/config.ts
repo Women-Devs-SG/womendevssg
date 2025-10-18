@@ -17,6 +17,7 @@ export const SITE: Site = {
     text: "Suggest Changes",
     appendFilePath: false,
   },
+  sponsorsPage: "/sponsors" // Add sponsors page link
 };
 
 export const LOCALE = {
