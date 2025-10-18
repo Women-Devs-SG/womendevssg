@@ -14,8 +14,11 @@ import { getCollection } from "astro:content";
 
 const members = await getCollection("members");
 // Separate core members and regular members
-const coreMembers = members.filter(member => member.data.core).sort((a, b) => (a.data.rank ?? Infinity) - (b.data.rank ?? Infinity));
-const regularMembers = members.filter(member => !member.data.core && !(member.id === 'member.md'));
+const coreMembers = members.filter(member => !member.data.volunteer && member.data.core).sort((a, b) => (a.data.rank ?? Infinity) - (b.data.rank ?? Infinity));
+const regularMembers = members.filter(member => !member.data.volunteer && !member.data.core && !(member.id === 'member.md'));
+
+// Separated section for volunteers
+const volunteers = members.filter(member => member.data.volunteer);
 ---
 
 <Layout title={`Members | ${SITE.title}`}>
@@ -57,6 +60,21 @@ const regularMembers = members.filter(member => !member.data.core && !(member.id
       ))}
     </ul>
 
+    <h2 class="text-2xl my-4 text-center font-semibold">Our volunteers</h2>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> 
+      {volunteers.map(volunteer => (
+        <li class="flex-1 min-w-[260px]">
+          <Member
+            name={volunteer.data.name}
+            bio={volunteer.data.bio || ""}
+            url={volunteer.data.url || ""}
+            socials={volunteer.data.socials}
+            badges={volunteer.data.badges || []}
+            volunteer={volunteer.data.volunteer || false} 
+          />
+        </li>
+      ))}
+    </ul>
 
   </MemberLayout>
   <Footer />

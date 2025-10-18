@@ -13,9 +13,10 @@ export interface Props {
   badges?: string[];
   core?: boolean; 
   ally?: boolean; 
+  volunteer?: boolean;
 }
 
-const { name, bio, url, socials, badges = [], core = false, ally = false } = Astro.props;
+const { name, bio, url, socials, badges = [], core = false, ally = false, volunteer } = Astro.props;
 
 // Define GitHub profile picture URL
 const githubUrl = socials.find(s => s.name === 'GitHub')?.href;
@@ -35,10 +36,15 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
           <span class="badge ally-badge">
             Ally
           </span>
-        ) : (
-          <span class="badge member-badge">
+        ) : ( volunteer ? 
+          (<span class="badge volunteer-badge">
+            Volunteer
+          </span>
+          ):
+          (<span class="badge member-badge">
             Member
           </span>
+          )
         )}
       </div>
     )}
@@ -128,6 +134,9 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
   }
   .member-badge {
     @apply bg-pink-500 text-white rounded-full px-3 py-1 text-sm font-semibold inline-flex items-center;
+  }
+  .volunteer-badge {
+    @apply bg-purple-500 text-white rounded-full px-3 py-1 text-sm font-semibold inline-flex items-center;
   }
   /* Removed icon classes */
   .i-heroicons-user-male,
