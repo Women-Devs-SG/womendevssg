@@ -43,10 +43,14 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             href="mailto:womendevssg@gmail.com?subject=Sponsorship%20Inquiry"
             ariaLabel="Sponsor Women Devs SG"
             title="Sponsor Women Devs SG"
-            className="mt-4 inline-block px-6 py-2 text-white font-semibold rounded"
+            className="cta-btn mt-4 inline-flex items-center gap-2 px-6 py-2 text-white font-semibold rounded"
           >
-            Sponsor Women Devs SG
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 0l8 5 8-5H4zm16 2.236-8 5-8-5V18h16V8.236z"/>
+            </svg>
+            <span>Sponsor Women Devs SG</span>
           </LinkButton>
+          <p class="mt-3 text-sm opacity-90"><a class="underline hover:text-skin-accent" href="/sponsors/">Learn more about sponsorship</a>.</p>
         </div>
       </div>
     </section>
@@ -207,11 +211,11 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     background-color: rgb(16, 155, 255);
   } 
 
-  html[data-theme="light"] #sponsor-cta a {
+  html[data-theme="light"] #sponsor-cta a.cta-btn {
     background-color: rgb(5,53,209);
   }
 
-  html[data-theme="dark"] #sponsor-cta a {
+  html[data-theme="dark"] #sponsor-cta a.cta-btn {
     background-color: rgb(16, 155, 255);
   }
 
