@@ -34,19 +34,22 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         )
       }
     </section>
-    <section id="hero">
-    <div class="flex flex-col items-center pb-6 pt-8 flex-wrap">
-      <div class="w-full text-center sm:p-4">
-        <h2 class="text-3xl font-bold">2025 Mentorship Program Applications Open!</h2>
-        <p>The TechLadies Mentorship Program empowers women with personal career guidance from experienced industry professionals in Software Engineering, UI/UX Design, Data Science/AI, and Product Management.</p>
-        <a href="https://techladies.netlify.app/mentorship/" target="_blank" rel="noopener noreferrer">
-        <button class="mt-4 px-6 py-2 text-white font-semibold rounded">
-          Learn more!
-        </button>
-      </a>
+    <section id="sponsor-cta">
+      <div class="w-full max-w-6xl mx-auto">
+        <div class="text-center sm:px-4">
+          <h2 class="text-3xl font-bold">Help Us Grow Women Devs SG</h2>
+          <p class="mt-2 text-sm opacity-90">Partner with us to build a more inclusive tech community in Singapore.</p>
+          <LinkButton
+            href="mailto:womendevssg@gmail.com?subject=Sponsorship%20Inquiry"
+            ariaLabel="Sponsor Women Devs SG"
+            title="Sponsor Women Devs SG"
+            className="mt-4 inline-block px-6 py-2 text-white font-semibold rounded"
+          >
+            Sponsor Women Devs SG
+          </LinkButton>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
     <section id="hero">
     <div class="flex justify-between items-center pb-6 pt-8 flex-wrap">
       <div class="w-full text-center sm:w-1/2 sm:text-left sm:p-4">
@@ -191,7 +194,18 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     background-color: rgb(16, 155, 255);
   } 
 
+  html[data-theme="light"] #sponsor-cta a {
+    background-color: rgb(5,53,209);
+  }
+
+  html[data-theme="dark"] #sponsor-cta a {
+    background-color: rgb(16, 155, 255);
+  }
+
   html[data-theme="dark"] #community-img {
     filter: brightness(1.3) contrast(0.9);
   } 
+  #sponsor-cta {
+  @apply pb-6 pt-8 w-full max-w-6xl;
+}
 </style>
