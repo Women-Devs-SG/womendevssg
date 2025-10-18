@@ -1,7 +1,7 @@
 ![WDS full logo](https://github.com/Women-Devs-SG/.github/raw/main/WDS-logo.png)
 # Welcome to Women Devs Singapore!👋
 
-Women Devs SG is a vibrant, inclusive community for women in tech, based in Singapore. We’re here to connect, support, and uplift women in the tech industry. From mentorship and networking to skills workshops and open-source initiatives, Women Devs SG is here to foster personal and professional growth at all stages of your career.
+Women Devs SG is a vibrant, inclusive community for women in tech, based in Singapore. We’re here to connect, support, and uplift women in the tech industry. From networking to skills workshops and open-source initiatives, Women Devs SG is here to foster personal and professional growth at all stages of your career.
 
 ## Contribute to our site!
 Whether you’re a seasoned tech professional, career-switcher, or student, Women Devs SG welcomes you to contribute to our website! This site is built with Astro.js, a template from Sat Naing's [AstroPaper](https://github.com/satnaing/astro-paper) repo.
