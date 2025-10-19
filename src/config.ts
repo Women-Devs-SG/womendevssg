@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: "https://womendevssg.netlify.app/", // replace this with your deployed domain
   author: "Women Devs SG",
   profile: "",
-  desc: "Women Devs SG is a community for women in the tech industry in Singapore.",
+  desc: "Dedicated to inspiring women to excel in technology careers.",
   title: "Women Devs SG",
   ogImage: "wds-og.jpg",
   lightAndDarkMode: true,
