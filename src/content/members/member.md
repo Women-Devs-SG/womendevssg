@@ -4,7 +4,7 @@ name: "Example Member"
 bio: "This is my bio."
 core: false
 ally: false          # Set to true ONLY if you are an ally (non-woman member)
-volunteer: false     # Set to true if you want to be a volunteer
+volunteer: false     # Set to true if you are a volunteer
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/victoria2666/"
