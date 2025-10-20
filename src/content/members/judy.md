@@ -2,7 +2,7 @@
 name: "Judy"
 bio: "I'm a Product Manager."
 core: false
-ally: true
+ally: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/judyongcy/"
