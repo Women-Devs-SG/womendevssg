@@ -31,30 +31,19 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
   <div class="profile-details">
     <h2>{name}</h2>
     {!core && (
-    <div class="role-badge">
-      {volunteer ? (
-      <div>
-        <span class="badge volunteer-badge">Volunteer</span>
-        {ally && <span class="badge ally-badge">Ally</span>}
+      <div class="role-badge">
+      <span class:list={['badge', volunteer ? 'volunteer-badge' : 'member-badge']}>
+      {volunteer ? 'Volunteer' : 'Member'}
+      </span>
+      {ally ? <span class="badge ally-badge">Ally</span> : null}
       </div>
-      ) : (
-      ally ? (
-      <>
-        <span class="badge member-badge">Member</span>
-        <span class="badge ally-badge">Ally</span>
-      </>
-      ) : (
-      <span class="badge member-badge">Member</span>
-      )
-      )}
-    </div>
     )}
-    {core && (badges.length > 0 || ally) && (
+    {core && (
     <div class="badges">
       {badges.map((badge) => (
       <span class="badge">{badge}</span>
       ))}
-      {ally && <span class="badge ally-badge">Ally</span>}
+      {ally ? <span class="badge ally-badge">Ally</span> : null}
     </div>
     )}
     {bio && <p class="bio">{bio}</p>}
