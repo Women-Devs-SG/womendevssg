@@ -45,7 +45,7 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
     {core && badges.length > 0 && ( 
       <div class="badges">
         {badges.map(badge => (
-          <span class="badge" style={{textTransform: 'capitalize'}}>{badge}</span> 
+          <span class="badge capitalize">{badge}</span> 
         ))}
       </div>
     )}
