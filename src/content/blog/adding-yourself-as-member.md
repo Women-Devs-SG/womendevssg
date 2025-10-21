@@ -1,5 +1,5 @@
 ---
-author: Victoria Lo
+author: Victoria Lo, Aishwarya Elango
 pubDatetime: 2024-10-23T10:22:00Z
 title: Adding yourself as a new member
 slug: adding-yourself-as-member
@@ -34,6 +34,7 @@ Create a new `YOUR_NAME.md` file at `src/content/members`. Copy and paste this i
 name: "Regular Member"
 bio: "This is my bio."
 core: false
+ally: false
 socials:
   - name: "LinkedIn"
     href: "https://www.linkedin.com/in/victoria2666/"
@@ -68,7 +69,14 @@ List of possible `name` values:
 - GitLab
 - Reddit
 
-## Steps to Add Yourself
+## Getting Started 
+
+# Prerequisities
+- A Github Account 
+- A text editor or IDE 
+- Git installed on your machine (Alternatively, you can also use the web interface directly within your browser)
+
+Setup (if not using the web interface)
 
 ### Step 1: Fork the Repository
 
