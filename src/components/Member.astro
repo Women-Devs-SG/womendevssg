@@ -6,16 +6,17 @@ import socialIcons from "@assets/socialIcons";
 import { isExternalLink } from "../utils/openExternalLinks";
 
 export interface Props {
-  name: string;
-  bio?: string;
-  url?: string;
-  socials: { name: string; href: string }[];
-  badges?: string[];
-  core?: boolean; 
-  ally?: boolean; 
+name: string;
+bio?: string;
+url?: string;
+socials: { name: string; href: string }[];
+badges?: string[];
+core?: boolean;
+ally?: boolean;
+volunteer?: boolean;
 }
 
-const { name, bio, url, socials, badges = [], core = false, ally = false } = Astro.props;
+const { name, bio, url, socials, badges = [], core = false, ally = false, volunteer = false} = Astro.props;
 
 // Define GitHub profile picture URL
 const githubUrl = socials.find(s => s.name === 'GitHub')?.href;
@@ -31,45 +32,41 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
     <h2>{name}</h2>
     {!core && (
       <div class="role-badge">
-        {ally ? (
-          <span class="badge ally-badge">
-            Ally
-          </span>
-        ) : (
-          <span class="badge member-badge">
-            Member
-          </span>
-        )}
+      <span class:list={['badge', volunteer ? 'volunteer-badge' : 'member-badge']}>
+      {volunteer ? 'Volunteer' : 'Member'}
+      </span>
+      {ally ? <span class="badge ally-badge">Ally</span> : null}
       </div>
     )}
-    {core && badges.length > 0 && ( 
-      <div class="badges">
-        {badges.map(badge => (
-          <span class="badge capitalize">{badge}</span> 
-        ))}
-      </div>
+    {core && (
+    <div class="badges">
+      {badges.map((badge) => (
+      <span class="badge">{badge}</span>
+      ))}
+      {ally ? <span class="badge ally-badge">Ally</span> : null}
+    </div>
     )}
     {bio && <p class="bio">{bio}</p>}
     {url && (
-      <a 
-        class="website" 
-        href={url}
-        aria-label={isExternal ? `${url} (opens in new tab)` : url}
-        target={isExternal ? "_blank" : undefined}
+    <a 
+    class="website" 
+    href={url} 
+    aria-label={isExternal ? `${url} (opens in new tab)` : url} 
+        target={isExternal ? "_blank" : undefined} 
         rel={isExternal ? "noopener noreferrer" : undefined}
-      >
-        {url}
-      </a>
+        >
+      {url}
+    </a>
     )}
     <div class="social-icons">
       {socials.map(social => (
-        <LinkButton
-          href={`${social.href}`}
-          className="link-button"
-          title={`${social.name}`}
-        >
-          <Fragment set:html={socialIcons[social.name as keyof typeof socialIcons]} />
-        </LinkButton>
+      <LinkButton 
+      href={`${social.href}`} 
+      className="link-button" 
+      title={`${social.name}`}
+      >
+        <Fragment set:html={socialIcons[social.name as keyof typeof socialIcons]} />
+      </LinkButton>
       ))}
     </div>
   </div>
@@ -83,11 +80,11 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
   .profile-picture {
     @apply w-24 h-24 rounded-full border border-gray-300;
   }
-  
+
   .profile-details {
     @apply flex flex-col justify-start;
   }
-  
+
   h2 {
     @apply text-xl font-semibold;
   }
@@ -107,7 +104,7 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
   .website {
     @apply text-blue-500;
   }
-  
+
   .website:hover {
     text-decoration: underline;
   }
@@ -129,6 +126,9 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
   .member-badge {
     @apply bg-pink-500 text-white rounded-full px-3 py-1 text-sm font-semibold inline-flex items-center;
   }
+  .volunteer-badge {
+    @apply bg-purple-500 text-white rounded-full px-3 py-1 text-sm font-semibold inline-flex items-center;
+  }
   /* Removed icon classes */
   .i-heroicons-user-male,
   .i-heroicons-user-female {
@@ -137,9 +137,9 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
 
   /* Dark mode specific styles */
   html[data-theme="dark"] .bio {
-    @apply text-white; 
+    @apply text-white;
   }
-  
+
   html[data-theme="dark"] .member-profile {
     @apply border-gray-500 shadow-gray-600;
   }
