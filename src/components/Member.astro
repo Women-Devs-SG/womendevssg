@@ -41,7 +41,7 @@ const isExternal = url ? isExternalLink(url, currDomain) : false;
     {core && (
     <div class="badges">
       {badges.map((badge) => (
-      <span class="badge">{badge}</span>
+      <span class="badge capitalize">{badge}</span>
       ))}
       {ally ? <span class="badge ally-badge">Ally</span> : null}
     </div>
