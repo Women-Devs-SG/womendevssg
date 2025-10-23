@@ -71,7 +71,7 @@ Before you dive in:
 To ensure that everyone has a fair and positive experience, we ask all contributors to follow these guidelines. We are a community focused on providing opportunities, and these rules help us achieve that mission.
 
 **1. Ask Before You Work**
-- Please find an issue you're interested in and comment to ask for assignment **before** you start working.
+-  Please comment on an issue and ask to be assigned **before** you start working.
 - Do not work on issues that have already been assigned to someone else.
 
 **2. Wait for Assignment**
@@ -82,7 +82,7 @@ To ensure that everyone has a fair and positive experience, we ask all contribut
 - As part of our core mission to empower women in tech, some issues are labeled **`women-devs-only`**.
 - **These issues are strictly reserved to give women developers an opportunity to learn and contribute in a safe, supportive space.** We kindly ask that our allies respect this policy and leave these specific issues for them.
 
-**4. One Thing at a Time**
+**4. One Issue at a Time**
 - To give everyone a chance, you can only be assigned **one issue at a time** across all WomenDevsSG repositories.
 - Please also ensure that each Pull Request (PR) you submit solves **only one issue**. Do not bundle fixes for multiple issues into a single PR.
 

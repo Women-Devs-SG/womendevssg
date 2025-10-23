@@ -7,7 +7,7 @@ To help us review this PR efficiently, please read and complete the checklist be
 
 **Please check each box. Your Pull Request will not be reviewed if you have not confirmed these steps.**
 
-- [ ] **I have been assigned this issue.** I commented on the issue and waited for a maintainer to assign it to me before I started working on it.
+- [ ] **I have been assigned this issue.** I commented on the issue and a maintainer has assigned it to me.
 - [ ] **This PR is focused.** It resolves only the single issue it is linked to. It does not contain fixes for other issues.
 
 **By submitting this PR, I confirm that I have read and followed the contribution guidelines. I understand that PRs that do not meet these requirements may be closed.**
@@ -42,7 +42,7 @@ To help us review this PR efficiently, please read and complete the checklist be
 Closes: #<!-- Issue number, if applicable -->
 
 <!--
-⭐ (Optional) Show Your Support! ⭐
+⭐ Show Your Support! ⭐
 
 If you believe in our mission to empower women in tech, please consider starring our repository. It's a free and easy way to show your support, and it helps our community grow!
 
