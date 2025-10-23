@@ -1,5 +1,6 @@
 ---
 import Testimonial from "@components/Testimonial.astro";
+import { parseCSV } from "@utils/parseCSV";
 
 interface Item {
   quote: string;
@@ -74,46 +75,6 @@ async function fetchFromSheet(id: string, name: string): Promise<Item[]> {
   } catch {
     return [];
   }
-}
-
-function parseCSV(text: string): string[][] {
-  const rows: string[][] = [];
-  let cur: string[] = [];
-  let field = "";
-  let inQuotes = false;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (inQuotes) {
-      if (c === '"') {
-        if (text[i + 1] === '"') {
-          field += '"';
-          i++;
-        } else {
-          inQuotes = false;
-        }
-      } else {
-        field += c;
-      }
-    } else {
-      if (c === '"') {
-        inQuotes = true;
-      } else if (c === ',') {
-        cur.push(field);
-        field = "";
-      } else if (c === '\n' || c === '\r') {
-        if (c === '\r' && text[i + 1] === '\n') i++;
-        cur.push(field);
-        rows.push(cur);
-        cur = [];
-        field = "";
-      } else {
-        field += c;
-      }
-    }
-  }
-  cur.push(field);
-  rows.push(cur);
-  return rows.filter((r) => r.some((v) => v && v.trim().length > 0));
 }
 
 let list: Item[] = [];
