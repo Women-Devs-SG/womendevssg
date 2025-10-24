@@ -71,7 +71,7 @@ Before you dive in:
 To ensure that everyone has a fair and positive experience, we ask all contributors to follow these guidelines. We are a community focused on providing opportunities, and these rules help us achieve that mission.
 
 **1. Ask Before You Work**
--  Please comment on an issue and ask to be assigned **before** you start working.
+- Please comment on an issue and ask to be assigned **before** you start working.
 - Do not work on issues that have already been assigned to someone else.
 
 **2. Wait for Assignment**
