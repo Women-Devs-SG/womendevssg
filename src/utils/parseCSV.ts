@@ -18,15 +18,18 @@ export function parseCSV(text: string): string[][] {
   let currentField = '';
   let inQuotes = false;
   
+  // Normalize line endings and trim
+  text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').trim();
+  
   for (let i = 0; i < text.length; i++) {
     const char = text[i];
     
     if (inQuotes) {
       if (char === '"') {
-        if (text[i + 1] === '"') {
-          // Handle escaped quote ("")
+        // Check if this is an escaped quote ("")
+        if (i + 1 < text.length && text[i + 1] === '"') {
           currentField += '"';
-          i++;
+          i++; // Skip the next quote
         } else {
           inQuotes = false;
         }
@@ -38,17 +41,17 @@ export function parseCSV(text: string): string[][] {
         inQuotes = true;
       } else if (char === ',') {
         // End of field
-        currentRow.push(currentField);
+        currentRow.push(currentField.trim());
         currentField = '';
-      } else if (char === '\n' || char === '\r') {
-        // Handle line endings (both \n and \r\n)
-        if (char === '\r' && text[i + 1] === '\n') {
-          i++; // Skip the \n in \r\n
-        }
+      } else if (char === '\n') {
         // End of row
-        currentRow.push(currentField);
+        currentRow.push(currentField.trim());
         currentField = '';
-        rows.push(currentRow);
+        
+        // Only push non-empty rows
+        if (currentRow.some(field => field !== '')) {
+          rows.push(currentRow);
+        }
         currentRow = [];
       } else {
         currentField += char;
@@ -57,10 +60,12 @@ export function parseCSV(text: string): string[][] {
   }
   
   // Add the last field and row if they exist
-  if (currentField !== '' || text[text.length - 1] === ',') {
+  currentField = currentField.trim();
+  if (currentField !== '' || (text[text.length - 1] === ',' && !inQuotes)) {
     currentRow.push(currentField);
   }
-  if (currentRow.length > 0) {
+  
+  if (currentRow.length > 0 && currentRow.some(field => field !== '')) {
     rows.push(currentRow);
   }
   
