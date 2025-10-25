@@ -1,4 +1,5 @@
 <!-- This is a sample file to guide new members on how to add themselves to the community page. -->
+<!-- After you've edited this file with your details, please DELETE these TWO lines of comments (including the first < and last >), before you commit your changes. -->
 ---
 name: "Example Member"
 bio: "This is my bio."
