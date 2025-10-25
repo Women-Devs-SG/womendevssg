@@ -1,0 +1,29 @@
+---
+interface Props {
+  quote: string;
+  name: string;
+  imageUrl?: string;
+  role?: string;
+  company?: string;
+}
+const { quote, name, imageUrl, role, company } = Astro.props as Props;
+---
+<figure class="testimonial-card rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-shadow p-6 sm:p-7 space-y-4">
+  <div class="text-3xl leading-none text-slate-400 dark:text-slate-500" aria-hidden="true">“</div>
+
+  <blockquote>
+    <p class="italic leading-relaxed text-slate-700 dark:text-slate-300">{quote}</p>
+  </blockquote>
+
+  <figcaption class="flex items-center gap-3">
+    {imageUrl && (
+      <img src={imageUrl} alt={`${name}'s photo`} class="h-12 w-12 rounded-full object-cover flex-shrink-0" loading="lazy" decoding="async" />
+    )}
+    <div>
+      <p class="font-semibold text-slate-900 dark:text-slate-100">{name}</p>
+      {(role || company) && (
+        <p class="text-sm text-slate-500 dark:text-slate-400">{[role, company].filter(Boolean).join(" · ")}</p>
+      )}
+    </div>
+  </figcaption>
+</figure>

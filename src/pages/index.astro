@@ -6,6 +6,7 @@ import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
+import Testimonials from "@components/Testimonials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
 
@@ -112,6 +113,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </div>
     </div>
   </section>
+
+  <Testimonials />
 
     <section id="events">
       <h2 class="mb-8 text-center">Upcoming Events</h2>
