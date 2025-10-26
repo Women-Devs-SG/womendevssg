@@ -64,12 +64,16 @@ async function fetchFromSheet(id: string, name: string): Promise<Item[]> {
     const nameIdx = header.findIndex((h) => h.toLowerCase() === "name");
     const quoteIdx = header.findIndex((h) => h.toLowerCase() === "quote");
     const imageIdx = header.findIndex((h) => h.toLowerCase() === "imageurl");
+    const roleIdx = header.findIndex((h) => h.toLowerCase() === "role");
+    const companyIdx = header.findIndex((h) => h.toLowerCase() === "company");
     const out: Item[] = [];
     for (const r of dataRows) {
       const name = nameIdx >= 0 ? r[nameIdx]?.trim() : "";
       const quote = quoteIdx >= 0 ? r[quoteIdx]?.trim() : "";
       const imageUrl = imageIdx >= 0 ? r[imageIdx]?.trim() : undefined;
-      if (name && quote) out.push({ name, quote, imageUrl });
+      const role = roleIdx >= 0 ? r[roleIdx]?.trim() : undefined;
+      const company = companyIdx >= 0 ? r[companyIdx]?.trim() : undefined;
+      if (name && quote) out.push({ name, quote, imageUrl, role, company });
     }
     return out;
   } catch {
