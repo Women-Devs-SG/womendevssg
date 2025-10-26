@@ -1,0 +1,111 @@
+---
+import Testimonial from "@components/Testimonial.astro";
+import { parseCSV } from "@utils/parseCSV";
+
+interface Item {
+  quote: string;
+  name: string;
+  role?: string;
+  company?: string;
+  imageUrl?: string;
+}
+
+interface Props {
+  items?: Item[];
+  title?: string;
+  subtitle?: string;
+  sheetId?: string;
+  sheetName?: string;
+}
+
+const defaultItems: Item[] = [
+  {
+    quote:
+      "WomenDevsSG has been instrumental in my career growth. The community's support and mentorship helped me transition to a senior role.",
+    name: "Sarah Chen",
+    role: "Senior Software Engineer",
+    company: "Tech Corp",
+  },
+  {
+    quote:
+      "I've made lifelong friends and found amazing career opportunities through this community.",
+    name: "Priya Sharma",
+    role: "Full Stack Developer",
+    company: "StartupLabs",
+  },
+  {
+    quote:
+      "Being part of WomenDevsSG gave me the confidence to step into leadership roles.",
+    name: "Jessica Wong",
+    role: "Tech Lead",
+    company: "Innovation Hub",
+  },
+];
+
+const {
+  items,
+  title = "What Our Community Says",
+  subtitle = "Hear from the amazing women who are part of our thriving tech community in Singapore",
+  sheetId = import.meta.env.PUBLIC_GOOGLE_SHEET_ID,
+  sheetName = "Sheet1",
+} = Astro.props as Props;
+
+async function fetchFromSheet(id: string, name: string): Promise<Item[]> {
+  const url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(name)}`;
+  try {
+    const bust = Date.now();
+    const res = await fetch(`${url}&cb=${bust}`, { cache: 'no-store' });
+    if (!res.ok) return [];
+    const csv = await res.text();
+    const rows = parseCSV(csv);
+    if (rows.length === 0) return [];
+    const header = rows[0].map((h) => h.trim());
+    const dataRows = rows.slice(1);
+    const nameIdx = header.findIndex((h) => h.toLowerCase() === "name");
+    const quoteIdx = header.findIndex((h) => h.toLowerCase() === "quote");
+    const imageIdx = header.findIndex((h) => h.toLowerCase() === "imageurl");
+    const roleIdx = header.findIndex((h) => h.toLowerCase() === "role");
+    const companyIdx = header.findIndex((h) => h.toLowerCase() === "company");
+    const out: Item[] = [];
+    for (const r of dataRows) {
+      const name = nameIdx >= 0 ? r[nameIdx]?.trim() : "";
+      const quote = quoteIdx >= 0 ? r[quoteIdx]?.trim() : "";
+      const imageUrl = imageIdx >= 0 ? r[imageIdx]?.trim() : undefined;
+      const role = roleIdx >= 0 ? r[roleIdx]?.trim() : undefined;
+      const company = companyIdx >= 0 ? r[companyIdx]?.trim() : undefined;
+      if (name && quote) out.push({ name, quote, imageUrl, role, company });
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
+let list: Item[] = [];
+if (sheetId) {
+  const fetched = await fetchFromSheet(sheetId, sheetName);
+  list = fetched.length > 0 ? fetched : (items ?? defaultItems);
+} else {
+  list = items ?? defaultItems;
+}
+list = list.slice(0, 10);
+---
+{list.length === 0 ? (
+  <section id="testimonials" class="pb-6 pt-12 w-full max-w-6xl">
+    <h2 class="text-3xl font-semibold tracking-wide">Testimonials</h2>
+    <p class="mt-2 opacity-80">No testimonials available yet.</p>
+  </section>
+) : (
+  <section id="testimonials" class="pb-6 pt-12 w-full max-w-6xl">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-semibold tracking-wide">{title}</h2>
+      {subtitle && <p class="mt-2 opacity-80">{subtitle}</p>}
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {list.map((t) => (
+        <Testimonial {...t} />
+      ))}
+    </div>
+  </section>
+)}
