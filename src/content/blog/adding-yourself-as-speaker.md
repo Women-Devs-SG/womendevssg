@@ -24,7 +24,7 @@ The speaker profile is written in YAML format with the following properties.
 | **_bio_**             | Anything that describes you. Keep it short.                 | optional              |
 | **_linkedInURL_**     | Your linkedIn profile link.                                 | recommended           |
 | **_githubURL_**       | Link to your github profile.                                | required<sup>\*</sup> |
-| **_tags_**            | Topics or areas of expertise you speak about.               | optional              |
+| **_tags_**            | Topics or areas of expertise you speak about. Refer src/content/speakers/speaker-tags.md to add a relevant one               | optional              |
 | **_speakerfolio_**    | Links for your past talks or presentations.                 | optional              |
 
 ### Sample profile
@@ -37,8 +37,8 @@ bio: "A short bio"
 linkedInURL: "https://www.linkedin.com/in/username/"
 githubURL: "https://github.com/username"
 tags:
-  - devrel
-  - motivation
+  - devops
+  - cloud
 speakerfolio: 
   - name: "Ted Talk"
     url: "A link for the talk"
@@ -92,7 +92,7 @@ speakerfolio:
 2. Commit your changes with a meaningful message:
 
     ```bash
-    git commit -m "Add speaker for <your name>"
+    git commit -m "Add speaker profile for <your name>"
     ```
 
 3. Push your branch to your forked repository:

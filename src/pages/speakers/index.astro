@@ -8,13 +8,12 @@ import Speaker from "@components/Speaker.astro";
 import Main from "@layouts/Main.astro";
 
 const speakers = await getCollection("speakers");
-const filteredSpeakers = speakers.filter(speaker => !speaker.data.core && !(speaker.id === 'speaker.md'));
+const filteredSpeakers = speakers.filter(speaker => !speaker.data.core && !(speaker.id === 'speaker.md') && !(speaker.id === 'speaker-tags.md'));
 ---
 
 <Layout title={`Speakers | ${SITE.title}`}>
   <Header activeNav="speakers" />
-  <Main pageTitle="Our Community Speakers" pageDesc="Have you spoken in our community? Don't be shy - add yourself as a speaker with a quick PR!!!">
-    <h2 class="text-2xl my-4 text-center font-semibold">Our Lovely Speakers</h2>
+  <Main pageTitle="Our Community Speakers" pageDesc="Below are some of our amazing speakers who have contributed to our community! You can also add yourself as a speaker by making a PR!">
     <div class="flex flex-row items-center justify-start mb-2">
       <h3 class="font-medium px-2 py-1">Filtered Tags:</h3>
       <div id="selected-filters" class="flex flex-wrap gap-2"></div>
