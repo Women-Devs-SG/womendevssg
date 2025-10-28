@@ -41,6 +41,10 @@ To help us review this PR efficiently, please read and complete the checklist be
 
 Closes: #<!-- Issue number, if applicable -->
 
+## Screenshots/Demo
+
+<!-- If applicable, add screenshots or demo GIFs to help explain your changes -->
+
 <!--
 ⭐ Show Your Support! ⭐
 
