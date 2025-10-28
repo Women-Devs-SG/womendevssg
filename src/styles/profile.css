@@ -1,0 +1,74 @@
+.profile {
+    @apply flex items-start gap-4 p-4 border rounded-lg shadow-md h-full w-full;
+}
+
+.profile-picture {
+    @apply w-24 h-24 rounded-full border border-gray-300;
+}
+
+.profile-details {
+    @apply flex flex-col justify-start;
+}
+
+h2 {
+    @apply text-xl font-semibold;
+}
+
+.badges {
+    @apply flex flex-wrap gap-2 mb-2; /* Flex to allow wrapping */
+}
+
+.badge {
+    @apply inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold;
+}
+
+.bio {
+    @apply text-gray-700 mb-2;
+}
+
+.website {
+    @apply text-blue-500;
+}
+
+.website:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    @apply flex justify-start flex-wrap gap-2 mt-4;
+}
+
+.link-button {
+    @apply p-2 hover:rotate-6 transition-transform;
+}
+
+.role-badge {
+    @apply mb-2;
+}
+.ally-badge {
+    @apply bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold inline-flex items-center;
+}
+.member-badge {
+    @apply bg-pink-500 text-white rounded-full px-3 py-1 text-sm font-semibold inline-flex items-center;
+}
+.volunteer-badge {
+    @apply bg-purple-500 text-white rounded-full px-3 py-1 text-sm font-semibold inline-flex items-center;
+}
+/* Removed icon classes */
+.i-heroicons-user-male,
+.i-heroicons-user-female {
+    @apply text-lg;
+}
+
+/* Dark mode specific styles */
+html[data-theme="dark"] .bio {
+    @apply text-white;
+}
+
+html[data-theme="dark"] .member-profile {
+    @apply border-gray-500 shadow-gray-600;
+}
+
+html[data-theme="dark"] .website {
+    @apply text-blue-300;
+}
