@@ -1,0 +1,58 @@
+---
+import socialIcons from '@assets/socialIcons';
+import LinkButton from './LinkButton.astro';
+import SpeakerTags from './SpeakerTags';
+import '../styles/profile.css'
+
+export interface Props {
+    name: string;
+    bio?: string;
+    githubURL: string;
+    linkedInURL?: string;
+    tags?: string[];
+    speakerfolio?: {name:string, url: string}[];
+}
+
+const { name, bio, githubURL, linkedInURL, tags, speakerfolio } = Astro.props
+
+const profilePicture = `${githubURL}.png?size=200`
+---
+
+<div class="flex flex-col border p-4 rounded-lg size-full shadow-md">
+  <div class="flex items-start justify-between">
+    <div class="w-[75%]">
+      <h2>{name}</h2>
+      {bio && <p class="bio">{bio}</p>}
+    </div>
+    <img src={profilePicture} alt={`${name}'s profile picture`} class="profile-picture" />
+  </div>
+  <div class="flex flex-wrap">
+    {linkedInURL && 
+      <LinkButton
+        href={linkedInURL}
+        className="link-button"
+        title="LinkedIn"
+      >
+        <Fragment set:html={socialIcons['LinkedIn']} />
+      </LinkButton>
+    }
+    {githubURL &&
+        <LinkButton
+          href={githubURL}
+          className="link-button"
+          title="GitHub"
+        >
+          <Fragment set:html={socialIcons['GitHub']} />
+        </LinkButton>
+    }
+  </div>
+  {tags && tags.length > 0 && <SpeakerTags client:load tags={tags}/>}
+  {speakerfolio && speakerfolio.length > 0 && <div class="flex flex-col">
+    <h2 class="mt-2 font-semibold">Past Talks:</h2>
+    <div class="profile-details">
+        {speakerfolio.map(folio => (
+          <LinkButton href={folio.url} className="mt-0.5 italic underline-offset-4 underline">{folio.name}</LinkButton>
+        ))}
+    </div>
+  </div>}
+</div>

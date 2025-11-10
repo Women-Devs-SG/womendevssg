@@ -1,0 +1,41 @@
+---
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Layout from "@layouts/Layout.astro";
+import { SITE } from "@config";
+import { getCollection } from "astro:content";
+import Speaker from "@components/Speaker.astro";
+import Main from "@layouts/Main.astro";
+
+const speakers = await getCollection("speakers");
+const filteredSpeakers = speakers.filter(speaker => !speaker.data.core && !(speaker.id === 'speaker.md') && !(speaker.id === 'speaker-tags.md'));
+---
+
+<Layout title={`Speakers | ${SITE.title}`}>
+  <Header activeNav="speakers" />
+  <Main pageTitle="Our Community Speakers" pageDesc="Below are some of our amazing speakers who have contributed to our community! You can also add yourself as a speaker by making a PR!">
+    <div class="flex flex-row items-center justify-start mb-2">
+      <h3 class="font-medium px-2 py-1">Filtered Tags:</h3>
+      <div id="selected-filters" class="flex flex-wrap gap-2"></div>
+    </div>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> 
+      {filteredSpeakers.map(member => (
+        <li class="flex-1 min-w-[260px] speaker-card-container" data-labels={member.data.tags?.join(",")}>
+          <Speaker
+            name={member.data.name || ""}
+            bio={member.data.bio || ""}
+            githubURL={member.data.githubURL}
+            linkedInURL={member.data.linkedInURL || ""}
+            tags={member.data.tags || []}
+            speakerfolio={member.data.speakerfolio || []}
+          />
+        </li>
+      ))}
+    </ul>
+
+
+  </Main>
+  <Footer />
+</Layout>
+
+<script is:inline src="/src/utils/speakersFilter.ts" onload="window.initSpeakersFilter()" />
