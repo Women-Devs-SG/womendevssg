@@ -37,7 +37,7 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
-  experimental: {
-    contentLayer: true,
-  },
+  legacy: {
+    collections: true
+  }
 });
