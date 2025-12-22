@@ -44,7 +44,7 @@ I watched others as they
 Over time, that inspiration nudged me forward. I moved on from being an observer/learner, to someone who shows up and contributes, and gradually become more than I had expected. 
 
 <img
-  src="/src/assets/images/wds-may25-apidays.png"
+  src="/assets/images/blog/wds-may25-apidays.png"
   alt="WDS APIDays 2025"
   style="max-width: 600px; width: 100%; margin: 2rem auto; display: block;"
 />
@@ -56,7 +56,7 @@ I also started noticing something practical. I don’t need to wait for perfecti
 Being in the community makes it easier to try. Not because of pressure, but because participation feels normal. [Women Devs SG](https://www.linkedin.com/company/women-devs-sg) is a safe space to experiment and explore new versions of myself. 
 
 <img
-  src="/src/assets/images/wds-nov25-navigatingboundaries.png"
+  src="/assets/images/blog/wds-nov25-navigatingboundaries.png"
   alt="WDS Navigating Boundaries in the workplace 2025"
   style="max-width: 600px; width: 100%; margin: 2rem auto; display: block;"
 />
