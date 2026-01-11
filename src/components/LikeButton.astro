@@ -43,31 +43,33 @@ const { slug, className = "" } = Astro.props;
   }
 </style>
 
-<script>
-  const wrapper = document.querySelector(".like-button-wrapper");
-  const slug = wrapper?.getAttribute("data-slug");
-  const button = wrapper?.querySelector(".like-button");
-  const countSpan = wrapper?.querySelector(".like-count");
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const wrapper = document.querySelector(".like-button-wrapper");
+    if (!wrapper) return;
 
-  async function updateUi(res: Response) {
-    const { count, likedByUser } = await res.json();
-    if (countSpan) countSpan.textContent = count ? String(count) : "";
-    button?.classList.toggle("liked", likedByUser);
-  }
-  async function fetchCount() {
-    const res = await fetch(`/api/like?post=${slug}`, {
-      credentials: "include",
-    });
-    await updateUi(res);
-  }
+    const slug = wrapper.getAttribute("data-slug");
+    const button = wrapper.querySelector(".like-button");
+    const countSpan = wrapper.querySelector(".like-count");
 
-  button?.addEventListener("click", async () => {
-    const res = await fetch(`/api/like?post=${slug}`, {
-      method: "POST",
+    async function handleResponse(res) {
+      const { count, likedByUser } = await res.json();
+      countSpan.textContent = count ? String(count) : "";
+      button.classList.toggle("liked", likedByUser);
+    }
+
+    // Fetch initial count
+    fetch(`/api/like?post=${slug}`, {
+      method: "GET",
       credentials: "include",
+    }).then(handleResponse);
+
+    // Handle clicks
+    button.addEventListener("click", () => {
+      fetch(`/api/like?post=${slug}`, {
+        method: "POST",
+        credentials: "include",
+      }).then(handleResponse);
     });
-    await updateUi(res);
   });
-
-  fetchCount();
 </script>
