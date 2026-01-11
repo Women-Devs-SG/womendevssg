@@ -1,0 +1,41 @@
+---
+export interface Props {
+    slug: string;
+    className?: string;
+}
+
+const { slug, className = "" } = Astro.props;
+---
+
+<div class="like-button-wrapper" data-slug={slug}>
+    <button class:list={["group like-button", className]}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon-tabler"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            ></path>
+        </svg>
+        <span class="like-count">12</span>
+    </button>
+</div>
+
+<style>
+  .like-button-wrapper {
+    @apply inline-flex items-center;
+  }
+  .like-button {
+    @apply flex items-center gap-2 p-2 text-skin-base bg-transparent cursor-pointer;
+  }
+  .like-button .icon-tabler {
+    @apply w-5 h-5 stroke-skin-accent scale-100 transition-transform hover:scale-125;
+  }
+  .like-button .like-count {
+    @apply font-medium;
+  }
+</style>

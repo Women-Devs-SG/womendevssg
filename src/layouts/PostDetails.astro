@@ -8,6 +8,7 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
+import LikeButton from "@components/LikeButton.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -109,6 +110,8 @@ const nextPost =
         </svg>
         <span>Back to Top</span>
       </button>
+
+      <LikeButton slug={post.slug} />
 
       <ShareLinks />
     </div>
