@@ -18,6 +18,20 @@ Our community is for professional women in technology careers, including softwar
 
 Our events offer free hands on technical events, study groups, panel discussions, lightning talks, and keynotes featuring influential tech industry experts, innovators, and investors. We help you build the skills you need to raise your professional profile and achieve greater career success.
 
+## Code of Conduct
+
+The Organizers (and venue management) reserve the sole right and absolute discretion to refuse admission to, or remove from the Event/Venue, any person without prior notice. Reasons for denial of entry or ejection include, but are not limited to:
+
+**A. Safety & Security:** Behavior deemed unsafe, disorderly, abusive, threatening, or vulgar.
+
+**B. Compliance:** Failure to comply with instructions from staff or security or lead volunteers.
+
+**C. Requirements:** Failure to produce a valid ticket or photo ID, or failing to meet age/dress code requirements.
+
+**D. Prohibited Items:** Possession of illegal, hazardous, or dangerous items.
+
+**E. Discretion:** Any action that violates the health, safety, or enjoyment of other guests or staff.
+
 ## Volunteer FAQs
 
 ### How can I volunteer with WomenDevsSG?
