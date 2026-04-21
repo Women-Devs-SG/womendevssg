@@ -17,7 +17,7 @@
     "@astrojs/check": "^0.9.8",
     "@astrojs/rss": "^4.0.18",
     "@resvg/resvg-js": "^2.6.2",
-    "astro": "^5.18.1",
+    "astro": "^6.1.6",
     "fuse.js": "^7.1.0",
     "lodash.kebabcase": "^4.1.1",
     "remark-collapse": "^0.1.2",
