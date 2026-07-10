@@ -39,7 +39,7 @@
     "astro-eslint-parser": "^1.4.0",
     "dotenv": "^16.6.1",
     "eslint": "^9.39.4",
-    "eslint-plugin-astro": "^1.6.0",
+    "eslint-plugin-astro": "^2.1.1",
     "globals": "^15.15.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.14",
