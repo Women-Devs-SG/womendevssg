@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    
+    # 1. Block Major Updates
+    ignore:
+      # Ignore all major version bumps for the Astro "family"
+      - dependency-name: "astro"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@astrojs/*"
+        update-types: ["version-update:semver-major"]
+      
+      # Ignore Vite major updates (Astro relies heavily on Vite)
+      - dependency-name: "vite"
+        update-types: ["version-update:semver-major"]
+
+    # 2. Group Minor/Patch Updates
+    # This combines all @astrojs updates into one PR so you don't get 5 separate alerts
+    groups:
+      astro-ecosystem:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
