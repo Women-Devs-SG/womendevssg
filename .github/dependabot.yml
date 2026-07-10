@@ -7,14 +7,8 @@ updates:
     
     # 1. Block Major Updates
     ignore:
-      # Ignore all major version bumps for the Astro "family"
-      - dependency-name: "astro"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "@astrojs/*"
-        update-types: ["version-update:semver-major"]
-      
-      # Ignore Vite major updates (Astro relies heavily on Vite)
-      - dependency-name: "vite"
+      # Ignore all major version bumps to avoid breaking changes
+      - dependency-name: "*"
         update-types: ["version-update:semver-major"]
 
     # 2. Group Minor/Patch Updates
