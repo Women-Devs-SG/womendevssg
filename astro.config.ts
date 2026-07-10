@@ -37,7 +37,4 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
-  legacy: {
-    collections: true
-  }
 });

@@ -39,9 +39,9 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured); //resourc
         <>
           <section id="featured">
             <ul>
-              {featuredPosts.map(({ data, slug }) => (
+              {featuredPosts.map(({ data, id }) => (
                 <Card
-                  href={`/blog/${slug}/`}
+                  href={`/blog/${id.replace(/\.md$/, "")}/`}
                   frontmatter={data}
                   secHeading={false}
                   resources={true}

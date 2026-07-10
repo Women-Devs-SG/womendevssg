@@ -128,10 +128,10 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           <p>You can contribute your knowledge here!</p>
           <ul>
             {recentPosts.map(
-              ({ data, slug }, index) =>
+              ({ data, id }, index) =>
                 index < SITE.postPerIndex && (
                   <Card
-                    href={`/blog/${slug}/`}
+                    href={`/blog/${id.replace(/\\.md$/, "")}/`}
                     frontmatter={data}
                     secHeading={false}
                   />
