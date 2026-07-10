@@ -34,4 +34,47 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog };
+const members = defineCollection({
+  type: "content_layer",
+  loader: glob({ 
+    pattern: "!(member).md", 
+    base: "./src/content/members"
+  }),
+  schema: z.object({
+    name: z.string(),
+    bio: z.string(),
+    core: z.boolean().optional(),
+    ally: z.boolean().optional(),
+    socials: z.array(
+      z.object({
+        name: z.string(),
+        href: z.string(),
+      })
+    ).optional(),
+    badges: z.array(z.string()).optional(),
+    rank: z.number().optional(),
+  }),
+});
+
+const speakers = defineCollection({
+  type: "content_layer",
+  loader: glob({ 
+    pattern: "!(speaker|speaker-tags).md", 
+    base: "./src/content/speakers"
+  }),
+  schema: z.object({
+    name: z.string(),
+    bio: z.string(),
+    linkedInURL: z.string().optional(),
+    githubURL: z.string(),
+    tags: z.array(z.string()).optional(),
+    speakerfolio: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string(),
+      })
+    ).optional(),
+  }),
+});
+
+export const collections = { blog, members, speakers };
