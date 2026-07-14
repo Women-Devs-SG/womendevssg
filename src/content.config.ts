@@ -3,9 +3,16 @@ import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 
+const generateMarkdownId = ({ entry }: { entry: string }) =>
+  entry.replace(/\.md$/, "");
+
 const blog = defineCollection({
   type: "content_layer",
-  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/blog",
+    generateId: generateMarkdownId,
+  }),
   schema: ({ image }) =>
     z.object({
       author: z.string().default(SITE.author),
@@ -36,15 +43,18 @@ const blog = defineCollection({
 
 const members = defineCollection({
   type: "content_layer",
-  loader: glob({ 
-    pattern: "!(member).md", 
-    base: "./src/content/members"
+  loader: glob({
+    pattern: ["**/*.md", "!member.md"],
+    base: "./src/content/members",
+    generateId: generateMarkdownId,
   }),
   schema: z.object({
     name: z.string(),
     bio: z.string(),
+    url: z.string().optional(),
     core: z.boolean().optional(),
     ally: z.boolean().optional(),
+    volunteer: z.boolean().optional(),
     socials: z.array(
       z.object({
         name: z.string(),
@@ -58,13 +68,15 @@ const members = defineCollection({
 
 const speakers = defineCollection({
   type: "content_layer",
-  loader: glob({ 
-    pattern: "!(speaker|speaker-tags).md", 
-    base: "./src/content/speakers"
+  loader: glob({
+    pattern: ["**/*.md", "!speaker-tags.md"],
+    base: "./src/content/speakers",
+    generateId: generateMarkdownId,
   }),
   schema: z.object({
     name: z.string(),
     bio: z.string(),
+    core: z.boolean().optional(),
     linkedInURL: z.string().optional(),
     githubURL: z.string(),
     tags: z.array(z.string()).optional(),

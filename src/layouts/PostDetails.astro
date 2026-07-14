@@ -51,11 +51,11 @@ const layoutProps = {
 /* ========== Prev/Next Posts ========== */
 
 const allPosts = posts.map(({ data: { title }, id }) => ({
-  slug: id.replace(/\.md$/, ""),
+  slug: id,
   title,
 }));
 
-const currentPostIndex = allPosts.findIndex(a => a.slug === post.id.replace(/\.md$/, ""));
+const currentPostIndex = allPosts.findIndex(a => a.slug === post.id);
 
 const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
 const nextPost =

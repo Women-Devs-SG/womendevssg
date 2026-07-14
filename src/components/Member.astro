@@ -10,14 +10,14 @@ export interface Props {
 name: string;
 bio?: string;
 url?: string;
-socials: { name: string; href: string }[];
+socials?: { name: string; href: string }[];
 badges?: string[];
 core?: boolean;
 ally?: boolean;
 volunteer?: boolean;
 }
 
-const { name, bio, url, socials, badges = [], core = false, ally = false, volunteer = false} = Astro.props;
+const { name, bio, url, socials = [], badges = [], core = false, ally = false, volunteer = false} = Astro.props;
 
 // Define GitHub profile picture URL
 const githubUrl = socials.find(s => s.name === 'GitHub')?.href;

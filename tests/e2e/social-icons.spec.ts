@@ -28,7 +28,13 @@ async function writeTempMember(keys: string[], name = 'E2E Temp Member') {
 }
 
 async function cleanupTempMember() {
-  try { await fs.promises.unlink(TEMP_MEMBER_FILE); } catch {}
+  try {
+    await fs.promises.unlink(TEMP_MEMBER_FILE);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
+      throw error;
+    }
+  }
 }
 
 test.describe('Member social icons rendering', () => {

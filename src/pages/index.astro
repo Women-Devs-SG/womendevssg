@@ -131,7 +131,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
               ({ data, id }, index) =>
                 index < SITE.postPerIndex && (
                   <Card
-                    href={`/blog/${id.replace(/\\.md$/, "")}/`}
+                    href={`/blog/${id}/`}
                     frontmatter={data}
                     secHeading={false}
                   />

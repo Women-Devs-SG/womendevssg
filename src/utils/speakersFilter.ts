@@ -1,5 +1,7 @@
-interface Window {
-  initSpeakersFilter:() => void;
+declare global {
+  interface Window {
+    initSpeakersFilter: () => void;
+  }
 }
 
 window.initSpeakersFilter = function () {
@@ -39,3 +41,5 @@ window.initSpeakersFilter = function () {
     });
   }
 };
+
+export {};

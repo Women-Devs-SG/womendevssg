@@ -41,7 +41,7 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured); //resourc
             <ul>
               {featuredPosts.map(({ data, id }) => (
                 <Card
-                  href={`/blog/${id.replace(/\.md$/, "")}/`}
+                  href={`/blog/${id}/`}
                   frontmatter={data}
                   secHeading={false}
                   resources={true}

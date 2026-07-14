@@ -17,7 +17,7 @@ const searchList = sortedPosts.map(({ data, id }) => ({
   title: data.title,
   description: data.description,
   data,
-  slug: id.replace(/\.md$/, ""),
+  slug: id,
 }));
 ---
 

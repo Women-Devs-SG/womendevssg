@@ -22,7 +22,7 @@ const { page } = Astro.props;
     <ul>
       {
         page.data.map(({ data, id }) => (
-          <Card href={`/blog/${id.replace(/\\.md$/, "")}/`} frontmatter={data} />
+          <Card href={`/blog/${id}/`} frontmatter={data} />
         ))
       }
     </ul>
