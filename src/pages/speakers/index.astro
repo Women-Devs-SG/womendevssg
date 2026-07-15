@@ -3,12 +3,23 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Layout from "@layouts/Layout.astro";
 import { SITE } from "@config";
+import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import Speaker from "@components/Speaker.astro";
 import Main from "@layouts/Main.astro";
 
-const speakers = await getCollection("speakers");
-const filteredSpeakers = speakers.filter(speaker => !speaker.data.core && !(speaker.id === 'speaker.md') && !(speaker.id === 'speaker-tags.md'));
+let speakers: CollectionEntry<"speakers">[] = [];
+try {
+  speakers = await getCollection("speakers");
+} catch {
+  speakers = [];
+}
+const filteredSpeakers = speakers.filter(
+  speaker =>
+    !speaker.data.core &&
+    speaker.id !== "speaker" &&
+    speaker.id !== "speaker-tags"
+);
 ---
 
 <Layout title={`Speakers | ${SITE.title}`}>

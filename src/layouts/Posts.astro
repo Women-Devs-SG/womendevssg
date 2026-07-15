@@ -21,8 +21,8 @@ const { page } = Astro.props;
   <Main pageTitle="Blog" pageDesc="You can contribute to our community blog!">
     <ul>
       {
-        page.data.map(({ data, slug }) => (
-          <Card href={`/blog/${slug}/`} frontmatter={data} />
+        page.data.map(({ data, id }) => (
+          <Card href={`/blog/${id}/`} frontmatter={data} />
         ))
       }
     </ul>

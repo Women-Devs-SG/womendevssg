@@ -16,7 +16,7 @@ export default function Datetime({
   pubDatetime,
   modDatetime,
   size = "sm",
-  className = ""
+  className = "",
 }: Props) {
   return (
     <div

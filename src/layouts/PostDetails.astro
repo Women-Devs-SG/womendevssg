@@ -5,6 +5,7 @@ import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
@@ -25,10 +26,9 @@ const {
   pubDatetime,
   modDatetime,
   tags,
-  editPost,
 } = post.data;
 
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
@@ -49,12 +49,12 @@ const layoutProps = {
 
 /* ========== Prev/Next Posts ========== */
 
-const allPosts = posts.map(({ data: { title }, slug }) => ({
-  slug,
+const allPosts = posts.map(({ data: { title }, id }) => ({
+  slug: id,
   title,
 }));
 
-const currentPostIndex = allPosts.findIndex(a => a.slug === post.slug);
+const currentPostIndex = allPosts.findIndex(a => a.slug === post.id);
 
 const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
 const nextPost =
@@ -83,8 +83,6 @@ const nextPost =
       modDatetime={modDatetime}
       size="lg"
       className="my-2"
-      editPost={editPost}
-      postId={post.id}
     />
     <p>Written by {author}</p>
     <article id="article" class="prose mx-auto mt-8 max-w-3xl">
