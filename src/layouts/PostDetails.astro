@@ -26,7 +26,6 @@ const {
   pubDatetime,
   modDatetime,
   tags,
-  editPost,
 } = post.data;
 
 const { Content } = await render(post);
@@ -84,8 +83,6 @@ const nextPost =
       modDatetime={modDatetime}
       size="lg"
       className="my-2"
-      editPost={editPost}
-      postId={post.id}
     />
     <p>Written by {author}</p>
     <article id="article" class="prose mx-auto mt-8 max-w-3xl">

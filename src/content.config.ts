@@ -30,14 +30,6 @@ const blog = defineCollection({
         .optional(),
       description: z.string(),
       canonicalURL: z.string().optional(),
-      editPost: z
-        .object({
-          disabled: z.boolean().optional(),
-          url: z.string().optional(),
-          text: z.string().optional(),
-          appendFilePath: z.boolean().optional(),
-        })
-        .optional(),
     }),
 });
 

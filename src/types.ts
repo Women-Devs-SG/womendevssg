@@ -12,12 +12,6 @@ export type Site = {
   postPerPage: number;
   scheduledPostMargin: number;
   showArchives?: boolean;
-  editPost?: {
-    disabled?: boolean;
-    url?: URL["href"];
-    text?: string;
-    appendFilePath?: boolean;
-  };
 };
 
 export type SocialObjects = {

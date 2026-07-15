@@ -1,5 +1,4 @@
-import { LOCALE, SITE } from "@config";
-import type { Site } from "../types";
+import { LOCALE } from "@config";
 
 interface DatetimesProps {
   pubDatetime: string | Date;
@@ -11,8 +10,6 @@ interface DatetimesProps {
 interface Props extends DatetimesProps {
   size?: "sm" | "lg";
   className?: string;
-  editPost?: Site["editPost"] & { disabled?: boolean };
-  postId?: string;
 }
 
 export default function Datetime({
@@ -20,22 +17,7 @@ export default function Datetime({
   modDatetime,
   size = "sm",
   className = "",
-  editPost,
-  postId,
 }: Props) {
-  const activeEditPost = editPost ?? SITE.editPost;
-  const editPostUrl = activeEditPost?.url;
-  const showEditPost =
-    !!editPostUrl &&
-    !!postId &&
-    !activeEditPost.disabled;
-
-  const editLinkHref = showEditPost && editPostUrl
-    ? activeEditPost.appendFilePath
-      ? `${editPostUrl.replace(/\/$/, "")}/${postId}.md`
-      : editPostUrl
-    : undefined;
-
   return (
     <div
       className={`flex items-center space-x-2 opacity-80 ${className}`.trim()}
@@ -63,19 +45,6 @@ export default function Datetime({
           modDatetime={modDatetime}
         />
       </span>
-      {showEditPost && editLinkHref && (
-        <>
-          <span aria-hidden="true"> | </span>
-          <a
-            href={editLinkHref}
-            className={`underline hover:opacity-80 ${size === "sm" ? "text-sm" : "text-base"}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {activeEditPost?.text ?? "Edit"}
-          </a>
-        </>
-      )}
     </div>
   );
 }
