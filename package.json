@@ -43,7 +43,7 @@
     "eslint-plugin-astro": "^1.6.0",
     "globals": "^15.15.0",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.14",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "ts-jest": "^29.4.6",
