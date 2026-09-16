@@ -4,7 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    
+    # Wait 7 days after a release before opening a PR for it
+    cooldown:
+      default-days: 7
+
     # 1. Block Major Updates
     ignore:
       # Ignore all major version bumps to avoid breaking changes
@@ -18,3 +21,25 @@ updates:
         patterns:
           - "astro"
           - "@astrojs/*"
+      react-ecosystem:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react*"
+          - "@astrojs/react"
+      eslint-ecosystem:
+        patterns:
+          - "eslint*"
+          - "@typescript-eslint/*"
+          - "typescript-eslint"
+          - "astro-eslint-parser"
+          - "globals"
+      tailwind-ecosystem:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+          - "@astrojs/tailwind"
+          - "prettier-plugin-tailwindcss"
+      other-minor-patch:
+        patterns:
+          - "*"
