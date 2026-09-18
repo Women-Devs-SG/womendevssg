@@ -15,10 +15,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/markdown-remark": "^7.3.0",
+    "@astrojs/markdown-remark": "^7.3.1",
     "@astrojs/rss": "^4.0.19",
     "@resvg/resvg-js": "^2.6.2",
-    "astro": "^7.3.1",
+    "astro": "^7.3.2",
     "fuse.js": "^7.5.0",
     "lodash.kebabcase": "^4.1.1",
     "remark-collapse": "^0.1.2",
