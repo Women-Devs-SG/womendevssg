@@ -3,7 +3,7 @@ name: "Amelyn"
 bio: "UX Designer"
 core: false
 ally: false
-volunteer: true
+volunteer: false
 socials:
   - name: "Website"
     href: "https://zxsoh94.wixstudio.io/portfolio"

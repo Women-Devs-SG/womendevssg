@@ -1,8 +1,9 @@
 ---
 name: "Pradheepa Pullanieswaran"
-bio: "Software Track Leader @ Women Devs SG"
-core: true
+bio: "Volunteer @ Women Devs SG"
+core: false
 ally: false
+volunteer: true
 socials:
   - name: "Website"
     href: "https://www.pradheepa.com"
@@ -12,6 +13,4 @@ socials:
     href: "https://twitter.com/pradheepa"
   - name: "GitHub"
     href: "https://github.com/pradheepap"
-badges: 
-  - leader
 ---
