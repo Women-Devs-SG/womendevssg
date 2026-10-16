@@ -7,7 +7,15 @@ declare global {
 window.initSpeakersFilter = function () {
   const filtersContainer = document.getElementById("selected-filters")
   const speakerCards = document.querySelectorAll<HTMLElement>(".speaker-card-container")
+  const searchInput = document.getElementById("speaker-search") as HTMLInputElement | null
+  const emptyMessage = document.getElementById("no-speakers")
   let activeFilters: string[] = [];
+  let query = "";
+
+  searchInput?.addEventListener("input", () => {
+    query = searchInput.value.trim().toLowerCase();
+    applyFilters();
+  });
 
   window.addEventListener("tag-toggled", (event) => {
     const customEvent = event as CustomEvent<string>
@@ -34,11 +42,21 @@ window.initSpeakersFilter = function () {
       filtersContainer.appendChild(span);
     })
 
+    applyFilters();
+  }
+
+  function applyFilters() {
+    let visible = 0;
     speakerCards.forEach(card => {
       const tags = card.getAttribute("data-labels")?.split(",") || [];
-      const show = activeFilters.length === 0 || activeFilters.some(filter => tags.includes(filter));
+      const text = card.getAttribute("data-search") || "";
+      const matchesTags = activeFilters.length === 0 || activeFilters.some(filter => tags.includes(filter));
+      const matchesQuery = query === "" || query.split(/\s+/).every(word => text.includes(word));
+      const show = matchesTags && matchesQuery;
       card.style.display = show ? "" : "none";
+      if (show) visible++;
     });
+    emptyMessage?.classList.toggle("hidden", visible > 0);
   }
 };
 

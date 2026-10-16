@@ -12,6 +12,10 @@ tags:
   - women-in-tech
   - personal-branding
 speakerfolio:
+  - name: "Living with AI Agents: OpenClaw & NanoClaw in Practice (JuniorDevSG)"
+    url: "https://youtu.be/O3Ti9o20tcI"
+  - name: "JDS x WDS Code Mentoring Programme: System Design"
+    url: "https://youtu.be/lcBpGY4Lnro"
   - name: "apidays 2024: Designing a scalable ML Ops Pipeline: Insights and best practices"
     url: "https://www.youtube.com/watch?v=fkn5esM-BMQ"
   - name: "Power of Relationships: Developing a Supportive Professional Network"

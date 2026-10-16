@@ -25,13 +25,21 @@ const filteredSpeakers = speakers.filter(
 <Layout title={`Speakers | ${SITE.title}`}>
   <Header activeNav="speakers" />
   <Main pageTitle="Our Community Speakers" pageDesc="Below are some of our amazing speakers who have contributed to our community! You can also add yourself as a speaker by making a PR!">
+    <input
+      id="speaker-search"
+      type="search"
+      placeholder="Search speakers by name, topic, tag or talk..."
+      aria-label="Search speakers"
+      autocomplete="off"
+      class="w-full mb-4 px-3 py-2 rounded border border-skin-line bg-skin-fill text-skin-base placeholder:italic placeholder:opacity-75 focus:border-skin-accent focus:outline-none"
+    />
     <div class="flex flex-row items-center justify-start mb-2">
       <h3 class="font-medium px-2 py-1">Filtered Tags:</h3>
       <div id="selected-filters" class="flex flex-wrap gap-2"></div>
     </div>
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> 
       {filteredSpeakers.map(member => (
-        <li class="flex-1 min-w-[260px] speaker-card-container" data-labels={member.data.tags?.join(",")}>
+        <li class="flex-1 min-w-[260px] speaker-card-container" data-labels={member.data.tags?.join(",")} data-search={[member.data.name, member.data.bio, ...(member.data.tags ?? []), ...(member.data.speakerfolio ?? []).map(f => f.name)].join(" ").toLowerCase()}>
           <Speaker
             name={member.data.name || ""}
             bio={member.data.bio || ""}
@@ -49,4 +57,9 @@ const filteredSpeakers = speakers.filter(
   <Footer />
 </Layout>
 
-<script is:inline src="/src/utils/speakersFilter.ts" onload="window.initSpeakersFilter()" />
+<p id="no-speakers" class="hidden text-center mt-6">No speakers match your search.</p>
+
+<script>
+  import "../../utils/speakersFilter";
+  window.initSpeakersFilter();
+</script>
