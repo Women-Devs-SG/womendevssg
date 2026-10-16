@@ -9,11 +9,12 @@ export interface Props {
     bio?: string;
     githubURL: string;
     linkedInURL?: string;
+    websites?: {name:string, url: string}[];
     tags?: string[];
     speakerfolio?: {name:string, url: string}[];
 }
 
-const { name, bio, githubURL, linkedInURL, tags, speakerfolio } = Astro.props
+const { name, bio, githubURL, linkedInURL, websites, tags, speakerfolio } = Astro.props
 
 const VISIBLE_TALKS = 3;
 const profilePicture = `${githubURL}.png?size=200`
@@ -37,6 +38,15 @@ const profilePicture = `${githubURL}.png?size=200`
         <Fragment set:html={socialIcons['LinkedIn']} />
       </LinkButton>
     }
+    {websites?.map(site => (
+      <LinkButton
+        href={site.url}
+        className="link-button"
+        title={site.name}
+      >
+        <Fragment set:html={socialIcons['Website']} />
+      </LinkButton>
+    ))}
     {githubURL &&
         <LinkButton
           href={githubURL}
