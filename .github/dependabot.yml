@@ -3,8 +3,11 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-    
+      interval: "monthly"
+    # Wait 7 days after a release before opening a PR for it
+    cooldown:
+      default-days: 7
+
     # 1. Block Major Updates
     ignore:
       # Ignore all major version bumps to avoid breaking changes
@@ -12,9 +15,16 @@ updates:
         update-types: ["version-update:semver-major"]
 
     # 2. Group Minor/Patch Updates
-    # This combines all @astrojs updates into one PR so you don't get 5 separate alerts
+    # One PR for all minor/patch updates, and one for security updates
     groups:
-      astro-ecosystem:
+      # Security updates skip the cooldown
+      security-patches:
+        applies-to: security-updates
         patterns:
-          - "astro"
-          - "@astrojs/*"
+          - "*"
+      minor-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
