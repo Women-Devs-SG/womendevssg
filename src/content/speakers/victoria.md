@@ -1,6 +1,6 @@
 ---
 name: "Victoria Lo"
-bio: "Solutions Engineer Lead, Singapore's only GitHub Star (2022 to present), Director of Women Devs SG and co-founder of ragTech podcast. Speaker at apidays since 2024, FOST Singapore 2026 and CDAO 2026."
+bio: "Solutions Engineer Lead, Singapore's only woman GitHub Star (2022 to present), Director of Women Devs SG and co-founder of ragTech podcast. Speaker at apidays, Google I/O, FOST Singapore and CDAO."
 linkedInURL: "https://www.linkedin.com/in/victoria2666/"
 githubURL: "https://github.com/victoria-lo"
 tags:
