@@ -34,12 +34,11 @@ export default function Card({ href, frontmatter, secHeading = true, resources=f
         )}
       </a>
       {!resources && 
-        <><div className="flex items-center gap-2">
+        <>
           <p className="text-sm italic opacity-80">
             {author} <span aria-hidden="true">·</span>{" "}
             <time dateTime={pubDatetime.toISOString()}>{date}</time>
           </p>
-        </div>
       <p>{description}</p></>}
     </li>
   );
