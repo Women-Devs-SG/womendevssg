@@ -59,7 +59,7 @@ test.describe('Member social icons rendering', () => {
     await page.goto('/members');
 
     // Find our temp member card by name heading
-    const card = page.locator('.member-profile', { has: page.getByRole('heading', { name: 'E2E Temp Member' }) });
+    const card = page.locator('.profile', { has: page.getByRole('heading', { name: 'E2E Temp Member' }) });
     await expect(card).toBeVisible();
 
     // Fetch the keys again (from file) to assert links on the rendered page
