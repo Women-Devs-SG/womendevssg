@@ -13,7 +13,7 @@
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "lint": "eslint .",
     "test:e2e": "playwright test -c tests/playwright.config.ts",
-    "test": "playwright test -c tests/playwright.config.ts tests/unit"
+    "test": "playwright test -c tests/unit/playwright.config.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",

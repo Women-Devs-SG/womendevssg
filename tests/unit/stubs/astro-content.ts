@@ -58,13 +58,14 @@ function matchesPatterns(relativePath: string, patterns: string[]) {
   return include.some(p => p === '**/*.md') && !exclude.includes(relativePath);
 }
 
-function resolveSchema(schema: unknown): { parse: (value: unknown) => StubEntry['data'] } {
+type Schema = { parse: (value: unknown) => StubEntry['data'] };
+
+function resolveSchema(schema: unknown): Schema {
   // schema can be a zod object or a function ({ image }) => zod object
   const resolved = typeof schema === 'function' ? (schema as (helpers: { image: () => unknown }) => unknown)({ image: () => z.any() }) : schema;
-  if (!resolved) return { parse: (value: unknown) => value };
-  return resolved as StubEntry;
+  if (!resolved) return { parse: (value: unknown) => value as StubEntry['data'] };
+  return resolved as Schema;
 }
-
 
 const loaded = new Map<string, StubEntry[]>();
 
@@ -107,11 +108,19 @@ export const calls: [string, ((entry: StubEntry) => boolean) | undefined][] = []
 export async function getCollection(name: string, filter?: (entry: StubEntry) => boolean) {
   calls.push([name, filter]);
   const entries = loadCollection(name);
-  return filter ? entries.filter(filter) : entries;
+  // always a new array, so a test that sorts the result cannot change the cache
+  return filter ? entries.filter(filter) : [...entries];
 }
 
-export async function getEntry(name: string, id: string) {
-  return loadCollection(name).find(entry => entry.id === id);
+/** supports getEntry("blog", "id") and getEntry({ collection: "blog", id: "id" }), like Astro */
+export async function getEntry(nameOrRef: string | { collection: string; id: string }, id?: string) {
+  const ref = typeof nameOrRef === 'string' ? { collection: nameOrRef, id } : nameOrRef;
+  return loadCollection(ref.collection).find(entry => entry.id === ref.id);
+}
+
+/** clears recorded getCollection calls; use in test.beforeEach */
+export function resetCalls() {
+  calls.length = 0;
 }
 
 export async function render(entry: StubEntry) {

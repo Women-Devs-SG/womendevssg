@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 // "astro:content" is resolved to ./stubs/astro-content.ts by tests/unit/tsconfig.json
 import { getCollection, getEntry, render } from 'astro:content';
-import { calls, getCollectionNames, type StubEntry } from './stubs/astro-content';
+import { calls, getCollectionNames, resetCalls, type StubEntry } from './stubs/astro-content';
 import getPostsByGroupCondition from '@utils/getPostsByGroupCondition';
 
 /**
@@ -16,6 +16,8 @@ import getPostsByGroupCondition from '@utils/getPostsByGroupCondition';
 
 // same filter the pages use: getCollection("blog", ({ data }) => !data.draft)
 const notDraft = ({ data }: StubEntry) => !data.draft;
+
+test.beforeEach(() => resetCalls());
 
 test.describe('collection definitions (src/content.config.ts)', () => {
   test('blog, members and speakers are all defined', () => {
@@ -59,7 +61,15 @@ test.describe('getCollection("blog")', () => {
     drafts.forEach(draft => {
       expect(published.map(p => p.id), `draft "${draft.id}" is listed`).not.toContain(draft.id);
     });
-    expect(calls.at(-1)?.[0]).toBe('blog');
+    expect(calls.map(([name, filter]) => [name, filter])).toEqual([
+      ['blog', undefined],
+      ['blog', notDraft],
+    ]);
+  });
+
+  test('getEntry also accepts a reference object { collection, id }', async () => {
+    const [first] = await getCollection('blog');
+    expect((await getEntry({ collection: 'blog', id: first.id }))?.id).toBe(first.id);
   });
 
   test('getEntry returns the same entry as getCollection, and undefined for a missing id', async () => {
@@ -123,12 +133,14 @@ test.describe('getCollection("speakers")', () => {
     const speakers = await getCollection('speakers');
     speakers.forEach(s => {
       expect(s.data.name, `${s.id} name`).toBeTruthy();
+      expect(s.data.bio, `${s.id} bio`).toBeTruthy();
       expect(s.data.githubURL, `${s.id} githubURL`).toBeTruthy();
     });
 
     // same filter as src/pages/speakers/index.astro
     const listed = speakers.filter(s => !s.data.core && s.id !== 'speaker' && s.id !== 'speaker-tags');
+    // the "speaker" template is a real entry, but the page must not list it
+    expect(speakers.map(s => s.id)).toContain('speaker');
     expect(listed.map(s => s.id)).not.toContain('speaker');
-    expect(listed.length).toBeLessThanOrEqual(speakers.length);
   });
 });

@@ -5,8 +5,8 @@ import * as path from 'path';
 const BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:4321';
 
 const config: PlaywrightTestConfig = {
-  // this file lives in tests/: e2e specs are in tests/e2e, unit specs in tests/unit
-  testDir: '.',
+  // e2e specs only; unit specs have their own config in tests/unit
+  testDir: 'e2e',
   // screenshots, traces and the HTML report all go to tests/test-results (git-ignored)
   outputDir: path.join(__dirname, 'test-results', 'artifacts'),
   timeout: 120_000,
