@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-// Links in the header nav (src/components/Header.astro)
-const navLinks = ['/blog/', '/members/', '/about/', '/sponsors/'];
+// Links in the header (logo + nav menu) (src/components/Header.astro)
+const navLinks = ['/','/blog/', '/members/', '/about/', '/sponsors/'];
 
 test.describe('Nav bar links', () => {
   navLinks.forEach((href) => {
@@ -10,7 +10,7 @@ test.describe('Nav bar links', () => {
       page.on('pageerror', (e) => errors.push(e.message));
 
       await page.goto('/');
-      const link = page.locator(`#menu-items a[href="${href}"]`).first();
+      const link = page.locator(`header a[href="${href}"]`).first();
       await expect(link, `Nav link ${href} not visible`).toBeVisible();
 
       await link.click();

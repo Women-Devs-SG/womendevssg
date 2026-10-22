@@ -56,11 +56,14 @@ test.describe('Member social icons rendering', () => {
   });
 
   test('all available social icons render as clickable links on member card', async ({ page }) => {
-    await page.goto('/members');
-
     // Find our temp member card by name heading
     const card = page.locator('.profile', { has: page.getByRole('heading', { name: 'E2E Temp Member' }) });
-    await expect(card).toBeVisible();
+
+    // The dev server needs a moment to pick up the new content file, so reload until the card appears
+    await expect(async () => {
+      await page.goto('/members');
+      await expect(card).toBeVisible({ timeout: 2000 });
+    }).toPass({ timeout: 30_000 });
 
     // Fetch the keys again (from file) to assert links on the rendered page
     const src = await fs.promises.readFile(SOCIAL_ICONS_FILE, 'utf8');
