@@ -15,9 +15,14 @@ import * as path from 'path';
 import { z } from 'astro/zod';
 import { parseFrontmatter } from '@astrojs/markdown-remark';
 import type { GlobOptions } from './astro-loaders';
+// must stay above the content.config import: it redirects "astro:content" and "astro/loaders" to the stubs
+import './redirect-astro-imports';
+import { collections } from '../../../src/content.config';
 
 export type StubEntry = {
   id: string;
+  // frontmatter fields differ per collection, so tests read them without a fixed type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: Record<string, any>;
   body: string;
   filePath: string;
@@ -53,44 +58,18 @@ function matchesPatterns(relativePath: string, patterns: string[]) {
   return include.some(p => p === '**/*.md') && !exclude.includes(relativePath);
 }
 
-function resolveSchema(schema: unknown): { parse: (value: unknown) => any } {
+function resolveSchema(schema: unknown): { parse: (value: unknown) => StubEntry['data'] } {
   // schema can be a zod object or a function ({ image }) => zod object
-  const resolved = typeof schema === 'function' ? (schema as any)({ image: () => z.any() }) : schema;
+  const resolved = typeof schema === 'function' ? (schema as (helpers: { image: () => unknown }) => unknown)({ image: () => z.any() }) : schema;
   if (!resolved) return { parse: (value: unknown) => value };
-  return resolved as any;
+  return resolved as StubEntry;
 }
 
-/**
- * src/content.config.ts imports "astro:content" and "astro/loaders". Playwright only applies the
- * path mappings of tests/unit/tsconfig.json to files inside tests/unit, so redirect those two
- * imports to the stubs here before loading the real config.
- */
-function redirectAstroImportsToStubs() {
-  const Module = require('module');
-  const original = Module._resolveFilename;
-  const redirects: Record<string, string> = {
-    'astro:content': path.join(__dirname, 'astro-content.ts'),
-    'astro/loaders': path.join(__dirname, 'astro-loaders.ts'),
-  };
-  Module._resolveFilename = function (request: string, ...rest: unknown[]) {
-    return original.call(this, redirects[request] ?? request, ...rest);
-  };
-}
-
-let cachedCollections: Record<string, CollectionConfig> | undefined;
-function getConfig(): Record<string, CollectionConfig> {
-  if (!cachedCollections) {
-    // loaded lazily because src/content.config.ts itself imports this file
-    redirectAstroImportsToStubs();
-    cachedCollections = require('../../../src/content.config').collections;
-  }
-  return cachedCollections!;
-}
 
 const loaded = new Map<string, StubEntry[]>();
 
 function loadCollection(name: string): StubEntry[] {
-  const config = getConfig()[name];
+  const config = (collections as unknown as Record<string, CollectionConfig>)[name];
   if (!config) return []; // unknown collection: the real API logs a warning and returns []
   if (loaded.has(name)) return loaded.get(name)!;
 
@@ -135,13 +114,14 @@ export async function getEntry(name: string, id: string) {
   return loadCollection(name).find(entry => entry.id === id);
 }
 
-export async function render(_entry: StubEntry) {
+export async function render(entry: StubEntry) {
+  void entry; // the real render() takes the entry; the stub does not need it
   return { Content: () => null, headings: [] as unknown[] };
 }
 
 /** the collection definitions from the real src/content.config.ts */
 export function getCollectionNames() {
-  return Object.keys(getConfig());
+  return Object.keys(collections);
 }
 
 export { z };
