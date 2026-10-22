@@ -16,7 +16,8 @@ test.describe('Nav bar links', () => {
       await link.click();
       // The site uses Astro <ClientRouter />, so there is no full page load:
       // use a retrying URL assertion instead of waitForURL / waitForResponse.
-      await expect(page).toHaveURL(new RegExp(`${href.replace(/\/$/, '')}/?$`));
+      // generous timeout: the dev server compiles a page on its first visit
+      await expect(page).toHaveURL(new RegExp(`${href.replace(/\/$/, '')}/?$`), { timeout: 30_000 });
 
       // Not an error / 404 (checked with a direct request, not the click's response)
       const response = await page.request.get(href);
