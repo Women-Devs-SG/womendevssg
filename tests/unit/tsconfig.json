@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "../../src",
+    "paths": {
+      "astro:content": ["../tests/unit/stubs/astro-content.ts"],
+      "astro/loaders": ["../tests/unit/stubs/astro-loaders.ts"],
+      "@config": ["config.ts"],
+      "@utils/*": ["utils/*"],
+      "@types": ["types.ts"]
+    }
+  }
+}
