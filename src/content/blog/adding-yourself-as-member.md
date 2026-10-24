@@ -23,6 +23,7 @@ The member profile is written in YAML format with the following properties.
 | **_name_**    | Your name                                                        | required<sup>\*</sup> |
 | **_bio_**     | Anything that describes you. Keep it short.                      | optional              |
 | **_core_**    | Whether you are a core member (leader) or not. False by default. | optional              |
+| **_volunteer_** | Indicate true if you are a WDS volunteer, otherwise indicate as false or leave blank. | optional |
 | **_socials_** | Array of your social media. Written in array yaml format.        | GitHub is required    |
 | **_badges_**  | For core members, only. Describe your role.                      | optional              |
 | **_ally_**    | Indicate true if you are a **non-woman supporter**, otherwise indicate as false. Only shown for regular members. | optional |
@@ -35,6 +36,7 @@ Create a new `YOUR_NAME.md` file at `src/content/members`. Copy and paste this i
 name: "Regular Member"
 bio: "This is my bio."
 core: false
+volunteer: false
 ally: true
 socials:
   - name: "LinkedIn"
