@@ -1,6 +1,6 @@
 ---
 name: "Twissa Modi"
-bio: "Software engineer turned AI researcher, building and studying intelligent systems that turn complex problems into practical solutions."
+bio: "Software engineer turned AI researcher, building intelligent systems that turn complex problems into practical solutions."
 core: false
 ally: false
 volunteer: true
