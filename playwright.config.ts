@@ -4,9 +4,11 @@ import 'dotenv/config';
 const BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:4321';
 
 const config: PlaywrightTestConfig = {
+  testDir: './tests',
   timeout: 120_000,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 2 : undefined,
+  // run tests sequentially to prevent e2e tests from failing
+  workers: 1,
   reporter: [
     ['list'],
     ['html', { outputFolder: 'test-results', open: 'never' }],
