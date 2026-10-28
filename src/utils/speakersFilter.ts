@@ -4,12 +4,24 @@ declare global {
   }
 }
 
+let tagToggledHandler: ((event: Event) => void) | null = null;
+
 window.initSpeakersFilter = function () {
   const filtersContainer = document.getElementById("selected-filters")
   const speakerCards = document.querySelectorAll<HTMLElement>(".speaker-card-container")
+  const searchInput = document.getElementById("speaker-search") as HTMLInputElement | null
+  const emptyMessage = document.getElementById("no-speakers")
   let activeFilters: string[] = [];
+  let query = "";
 
-  window.addEventListener("tag-toggled", (event) => {
+  searchInput?.addEventListener("input", () => {
+    query = searchInput.value.trim().toLowerCase();
+    applyFilters();
+  });
+
+  // Remove the previous page visit's listener so toggles aren't handled twice
+  if (tagToggledHandler) window.removeEventListener("tag-toggled", tagToggledHandler);
+  tagToggledHandler = (event) => {
     const customEvent = event as CustomEvent<string>
     const tag = customEvent.detail;
     activeFilters = activeFilters.includes(tag)
@@ -17,7 +29,8 @@ window.initSpeakersFilter = function () {
       : [...activeFilters, tag];
 
     updateFiltersOnUI();
-  });
+  };
+  window.addEventListener("tag-toggled", tagToggledHandler);
   
   function updateFiltersOnUI() {
     if(!filtersContainer) return
@@ -34,11 +47,21 @@ window.initSpeakersFilter = function () {
       filtersContainer.appendChild(span);
     })
 
+    applyFilters();
+  }
+
+  function applyFilters() {
+    let visible = 0;
     speakerCards.forEach(card => {
       const tags = card.getAttribute("data-labels")?.split(",") || [];
-      const show = activeFilters.length === 0 || activeFilters.some(filter => tags.includes(filter));
+      const text = card.getAttribute("data-search") || "";
+      const matchesTags = activeFilters.length === 0 || activeFilters.some(filter => tags.includes(filter));
+      const matchesQuery = query === "" || query.split(/\s+/).every(word => text.includes(word));
+      const show = matchesTags && matchesQuery;
       card.style.display = show ? "" : "none";
+      if (show) visible++;
     });
+    emptyMessage?.classList.toggle("hidden", visible > 0);
   }
 };
 
