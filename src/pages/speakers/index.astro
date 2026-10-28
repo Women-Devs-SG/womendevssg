@@ -52,15 +52,14 @@ const filteredSpeakers = speakers.filter(
         </li>
       ))}
     </ul>
-
-
+    <p id="no-speakers" class="hidden text-center mt-6">No speakers match your search.</p>
   </Main>
   <Footer />
 </Layout>
 
-<p id="no-speakers" class="hidden text-center mt-6">No speakers match your search.</p>
-
 <script>
   import "../../utils/speakersFilter";
-  window.initSpeakersFilter();
+  document.addEventListener("astro:page-load", () => {
+    if (document.getElementById("speaker-search")) window.initSpeakersFilter();
+  });
 </script>

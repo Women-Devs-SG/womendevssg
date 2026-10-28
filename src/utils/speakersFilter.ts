@@ -4,6 +4,8 @@ declare global {
   }
 }
 
+let tagToggledHandler: ((event: Event) => void) | null = null;
+
 window.initSpeakersFilter = function () {
   const filtersContainer = document.getElementById("selected-filters")
   const speakerCards = document.querySelectorAll<HTMLElement>(".speaker-card-container")
@@ -17,7 +19,9 @@ window.initSpeakersFilter = function () {
     applyFilters();
   });
 
-  window.addEventListener("tag-toggled", (event) => {
+  // Remove the previous page visit's listener so toggles aren't handled twice
+  if (tagToggledHandler) window.removeEventListener("tag-toggled", tagToggledHandler);
+  tagToggledHandler = (event) => {
     const customEvent = event as CustomEvent<string>
     const tag = customEvent.detail;
     activeFilters = activeFilters.includes(tag)
@@ -25,7 +29,8 @@ window.initSpeakersFilter = function () {
       : [...activeFilters, tag];
 
     updateFiltersOnUI();
-  });
+  };
+  window.addEventListener("tag-toggled", tagToggledHandler);
   
   function updateFiltersOnUI() {
     if(!filtersContainer) return
