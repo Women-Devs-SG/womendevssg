@@ -14,16 +14,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@astrojs/markdown-remark": "^7.3.2",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/markdown-remark": "^7.3.4",
     "@astrojs/rss": "^4.0.19",
     "@resvg/resvg-js": "^2.6.2",
-    "astro": "^7.3.8",
+    "astro": "^7.4.2",
     "fuse.js": "^7.5.0",
     "lodash.kebabcase": "^4.1.1",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
-    "satori": "^0.47.1",
+    "satori": "^0.63.2",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
   },
@@ -36,7 +36,7 @@
     "@types/lodash.kebabcase": "^4.1.9",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
-    "@typescript-eslint/parser": "^8.71.1",
+    "@typescript-eslint/parser": "^8.72.0",
     "astro-eslint-parser": "^1.4.0",
     "dotenv": "^16.6.1",
     "eslint": "^9.39.5",
@@ -46,7 +46,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "ts-jest": "^29.4.14",
-    "typescript-eslint": "^8.71.1"
+    "ts-jest": "^29.4.15",
+    "typescript-eslint": "^8.72.0"
   }
 }
