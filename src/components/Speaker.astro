@@ -9,12 +9,14 @@ export interface Props {
     bio?: string;
     githubURL: string;
     linkedInURL?: string;
+    websites?: {name:string, url: string}[];
     tags?: string[];
     speakerfolio?: {name:string, url: string}[];
 }
 
-const { name, bio, githubURL, linkedInURL, tags, speakerfolio } = Astro.props
+const { name, bio, githubURL, linkedInURL, websites, tags, speakerfolio } = Astro.props
 
+const VISIBLE_TALKS = 3;
 const profilePicture = `${githubURL}.png?size=200`
 ---
 
@@ -36,6 +38,15 @@ const profilePicture = `${githubURL}.png?size=200`
         <Fragment set:html={socialIcons['LinkedIn']} />
       </LinkButton>
     }
+    {websites?.map(site => (
+      <LinkButton
+        href={site.url}
+        className="link-button"
+        title={site.name}
+      >
+        <Fragment set:html={socialIcons['Website']} />
+      </LinkButton>
+    ))}
     {githubURL &&
         <LinkButton
           href={githubURL}
@@ -49,10 +60,18 @@ const profilePicture = `${githubURL}.png?size=200`
   {tags && tags.length > 0 && <SpeakerTags client:load tags={tags}/>}
   {speakerfolio && speakerfolio.length > 0 && <div class="flex flex-col">
     <h2 class="mt-2 font-semibold">Past Talks:</h2>
-    <div class="profile-details">
-        {speakerfolio.map(folio => (
-          <LinkButton href={folio.url} className="mt-0.5 italic underline-offset-4 underline">{folio.name}</LinkButton>
+    <ul class="list-disc pl-5 text-sm">
+      {speakerfolio.slice(0, VISIBLE_TALKS).map(folio => (
+        <li><LinkButton href={folio.url} className="italic underline-offset-4 underline">{folio.name}</LinkButton></li>
+      ))}
+    </ul>
+    {speakerfolio.length > VISIBLE_TALKS && <details class="text-sm">
+      <summary class="cursor-pointer mt-1 text-skin-accent">Show {speakerfolio.length - VISIBLE_TALKS} more</summary>
+      <ul class="list-disc pl-5">
+        {speakerfolio.slice(VISIBLE_TALKS).map(folio => (
+          <li><LinkButton href={folio.url} className="italic underline-offset-4 underline">{folio.name}</LinkButton></li>
         ))}
-    </div>
+      </ul>
+    </details>}
   </div>}
 </div>
