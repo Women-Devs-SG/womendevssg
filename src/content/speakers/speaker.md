@@ -1,7 +1,7 @@
 ---
 name: "Speaker Name"
 bio: "A short bio"
-linkedInURL: "https://www.linkedin.com/in/username/" # recommended
+linkedInURL: "https://www.linkedin.com/in/username/" # mandatory
 githubURL: "https://github.com/username" # mandatory 
 websites:  # optional, personal or project sites
   - name: "My Website"

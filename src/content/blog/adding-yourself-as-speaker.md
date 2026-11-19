@@ -1,6 +1,6 @@
 ---
-author: Prateek
-pubDatetime: 2025-10-25
+author: Prateek (Last Updated by Victoria Lo)
+pubDatetime: 2026-12-25
 title: Adding yourself as speaker
 slug: adding-yourself-as-speaker
 featured: true
@@ -11,7 +11,36 @@ description:
   Some rules to add yourself in Speakers page
 ---
 
-Here's how you can add yourself to the Speakers page.
+Here's how you can add yourself to the [Speakers](/speakers/) page.
+
+## Who can be listed
+
+Speakers on this page represent Women Devs SG, so we keep a quality bar to make sure the content they share is useful for the community. You can add your speaker profile if you meet **all** of these:
+
+- You have at least 3 years of experience in tech.
+- You state a niche topic you speak about (use the `tags` and `bio` in your profile).
+- You have a professional LinkedIn profile, since you'll be representing WDS.
+- You have spoken at a WDS event, where your slides and content were already audited and approved.
+- Another WDS volunteer approves your pull request.
+
+### Haven't spoken at WDS yet?
+
+New speakers need to go through these steps first, then add their profile:
+
+1. Have your slides and content audited by a WDS tech lead.
+2. Speak at a WDS event.
+
+[Apply to be a speaker](https://forms.gle/qbDF2ZRgV1B9ikoq9) to get started.
+
+### Endorsed by WDS
+
+If a WDS volunteer or the core team knows you've given a great talk elsewhere (for example, an external conference), they can endorse you. Endorsed speakers don't need to go through the criteria above.
+
+### Vetting
+
+When you open a pull request, the WDS team adds a "Vetted by" note recording who vetted you, for example *Vetted by: Saloni (WDS Director)*, so we know who vouched for each speaker.
+
+> Meeting all the criteria doesn't guarantee a listing. Every speaker profile is subject to approval by the Women Devs SG team.
 
 ## Speaker profile
 
@@ -22,7 +51,7 @@ The speaker profile is written in YAML format with the following properties.
 |-----------------------|-------------------------------------------------------------|-----------------------|
 | **_name_**            | Your name                                                   | required<sup>\*</sup> |
 | **_bio_**             | Anything that describes you. Keep it short.                 | optional              |
-| **_linkedInURL_**     | Your LinkedIn profile link.                                 | recommended           |
+| **_linkedInURL_**     | Your LinkedIn profile link. Must be a professional profile. | required<sup>\*</sup> |
 | **_githubURL_**       | Link to your GitHub profile.                                | required<sup>\*</sup> |
 | **_tags_**            | Topics or areas of expertise you speak about. Refer src/content/speakers/speaker-tags.md to add a relevant one               | optional              |
 | **_speakerfolio_**    | Links for your past talks or presentations.                 | optional              |
