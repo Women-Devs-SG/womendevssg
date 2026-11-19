@@ -24,7 +24,16 @@ const filteredSpeakers = speakers.filter(
 
 <Layout title={`Speakers | ${SITE.title}`}>
   <Header activeNav="speakers" />
-  <Main pageTitle="Our Community Speakers" pageDesc="Below are some of our amazing speakers who have contributed to our community! You can also add yourself as a speaker by making a PR!">
+  <Main pageTitle="Our Community Speakers" pageDesc="Below are some of our amazing speakers who have contributed to our community!">
+    <p class="not-italic mb-6">
+      Want to represent WDS as a speaker? To keep the quality of our speakers
+      high and their content useful for the community, we have a few criteria.{" "}
+      <a
+        href="/blog/adding-yourself-as-speaker"
+        class="underline hover:text-skin-accent"
+        >Check if you qualify</a
+      >.
+    </p>
     <input
       id="speaker-search"
       type="search"

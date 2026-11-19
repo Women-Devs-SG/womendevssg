@@ -69,7 +69,7 @@ const speakers = defineCollection({
     name: z.string(),
     bio: z.string(),
     core: z.boolean().optional(),
-    linkedInURL: z.string().optional(),
+    linkedInURL: z.string(),
     githubURL: z.string(),
     websites: z.array(
       z.object({
