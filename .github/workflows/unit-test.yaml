@@ -1,0 +1,36 @@
+name: Unit Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [master]
+
+jobs:
+  unit:
+    # Skip draft pull requests; pushes to master always run
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # no browser or dev server needed: astro:content is stubbed (tests/unit/stubs)
+      - name: Run unit tests
+        run: npm run test
+
+      - name: Upload test report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-report
+          path: tests/test-results/unit-report/
+          retention-days: 14
