@@ -18,7 +18,7 @@ Here's how you can add yourself to the [Speakers](/speakers/) page.
 Speakers on this page represent Women Devs SG (WDS), so we keep a quality bar to make sure the content they share is useful for the community. You can add your speaker profile if you meet **all** of the following:
 
 - You have at least 3 years of experience in tech.
-- You state specific niche topic(s) that you speak about, shown in the `tags` and `bio` of your profile.
+- You state specific topic(s) that you speak about, shown in the `tags` and `bio` of your profile.
 - You have a professional LinkedIn profile, since you'll be representing WDS.
 - You have spoken at a WDS event, where your slides and content were audited and approved by a WDS member.
 - Another WDS volunteer approves your pull request.
@@ -28,8 +28,9 @@ Speakers on this page represent Women Devs SG (WDS), so we keep a quality bar to
 Complete these steps first, then add your profile:
 
 1. [Apply to be a speaker](https://forms.gle/qbDF2ZRgV1B9ikoq9).
-2. Have your slides and content audited by a WDS Tech Lead.
-3. Speak at a WDS event.
+2. WDS may reach out to collaborate with you on an event.
+3. Have your slides and content audited by a WDS Tech Lead.
+4. Speak at a WDS event.
 
 ### Endorsed by WDS
 
