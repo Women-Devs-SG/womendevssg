@@ -1,6 +1,6 @@
 ---
 author: Prateek (Last Updated by Victoria Lo)
-pubDatetime: 2026-12-25
+pubDatetime: 2026-11-24
 title: Adding yourself as speaker
 slug: adding-yourself-as-speaker
 featured: true
@@ -15,26 +15,25 @@ Here's how you can add yourself to the [Speakers](/speakers/) page.
 
 ## Who can be listed
 
-Speakers on this page represent Women Devs SG, so we keep a quality bar to make sure the content they share is useful for the community. You can add your speaker profile if you meet **all** of these:
+Speakers on this page represent Women Devs SG (WDS), so we keep a quality bar to make sure the content they share is useful for the community. You can add your speaker profile if you meet **all** of the following:
 
 - You have at least 3 years of experience in tech.
-- You state a niche topic you speak about (use the `tags` and `bio` in your profile).
+- You state specific niche topic(s) that you speak about, shown in the `tags` and `bio` of your profile.
 - You have a professional LinkedIn profile, since you'll be representing WDS.
-- You have spoken at a WDS event, where your slides and content were already audited and approved.
+- You have spoken at a WDS event, where your slides and content were audited and approved by a WDS member.
 - Another WDS volunteer approves your pull request.
 
 ### Haven't spoken at WDS yet?
 
-New speakers need to go through these steps first, then add their profile:
+Complete these steps first, then add your profile:
 
-1. Have your slides and content audited by a WDS tech lead.
-2. Speak at a WDS event.
-
-[Apply to be a speaker](https://forms.gle/qbDF2ZRgV1B9ikoq9) to get started.
+1. [Apply to be a speaker](https://forms.gle/qbDF2ZRgV1B9ikoq9).
+2. Have your slides and content audited by a WDS Tech Lead.
+3. Speak at a WDS event.
 
 ### Endorsed by WDS
 
-If a WDS volunteer or the core team knows you've given a great talk elsewhere (for example, an external conference), they can endorse you. Endorsed speakers don't need to go through the criteria above.
+If a WDS volunteer or the core team knows you've given a great talk elsewhere (for example, at an external conference), they can endorse you. Endorsed speakers don't need to meet the criteria above, but still need to fill in the required details in their speaker profile.
 
 ### Vetting
 
