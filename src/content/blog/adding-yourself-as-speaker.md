@@ -21,7 +21,7 @@ Speakers on this page represent Women Devs SG (WDS), so we keep a quality bar to
 - You state specific topic(s) that you speak about, shown in the `tags` and `bio` of your profile.
 - You have a professional LinkedIn profile, since you'll be representing WDS.
 - You have spoken at a WDS event, where your slides and content were audited and approved by a WDS member.
-- Another WDS volunteer approves your pull request.
+- A member of the WDS Speaker Approval Team approves your pull request.
 
 ### Haven't spoken at WDS yet?
 
@@ -35,10 +35,6 @@ Complete these steps first, then add your profile:
 ### Endorsed by WDS
 
 If a WDS volunteer or the core team knows you've given a great talk elsewhere (for example, at an external conference), they can endorse you. Endorsed speakers don't need to meet the criteria above, but still need to fill in the required details in their speaker profile.
-
-### Vetting
-
-When you open a pull request, the WDS team adds a "Vetted by" note recording who vetted you, for example *Vetted by: Saloni (WDS Director)*, so we know who vouched for each speaker.
 
 > Meeting all the criteria doesn't guarantee a listing. Every speaker profile is subject to approval by the Women Devs SG team.
 
