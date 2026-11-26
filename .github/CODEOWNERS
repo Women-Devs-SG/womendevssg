@@ -1,0 +1,7 @@
+# Speaker profiles on the Speakers page represent Women Devs SG, so only the
+# WDS Speaker Approval Team can approve changes to them.
+# See src/content/blog/adding-yourself-as-speaker.md for the criteria.
+#
+# Enforced by the "Require review from Code Owners" option in the
+# "protect master" ruleset.
+/src/content/speakers/ @Women-Devs-SG/wds-speaker-approval-team
