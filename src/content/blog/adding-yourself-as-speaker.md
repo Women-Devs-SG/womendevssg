@@ -49,7 +49,7 @@ The speaker profile is written in YAML format with the following properties.
 | **_bio_**             | Anything that describes you. Keep it short.                 | optional              |
 | **_linkedInURL_**     | Your LinkedIn profile link. Must be a professional profile. | required<sup>\*</sup> |
 | **_githubURL_**       | Link to your GitHub profile.                                | required<sup>\*</sup> |
-| **_tags_**            | Topics or areas of expertise you speak about. Refer src/content/speakers/speaker-tags.md to add a relevant one               | optional              |
+| **_tags_**            | Topics or areas of expertise you speak about. Refer to src/content/speakers/speaker-tags.md to add a relevant one               | optional              |
 | **_speakerfolio_**    | Links for your past talks or presentations.                 | optional              |
 
 ### Sample profile
